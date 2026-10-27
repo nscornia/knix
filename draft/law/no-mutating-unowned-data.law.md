@@ -9,6 +9,13 @@ Data belongs to the module that created it; everyone else reads it or copies it.
   - No `export let`.
   - Callbacks that capture an instance never live in module scope.
 
+## Why
+
+An imported object is one shared instance, so one consumer's edit is seen by every other module that imports it. The resulting bug shows up far from its cause and can depend on which code ran first, so only the owner changes its data. Consumers change a copy.
+
+- **Imports:** "any module holding an exported object can mutate the object, and the mutated value can be observed by all other modules importing the same value." ([MDN `import`][mdn-import])
+- **Parameters:** "Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller." ([Airbnb JavaScript Style Guide, 7.12][airbnb-mutate-params])
+
 ## Exceptions
 
 - A module initialising its own export.
@@ -27,3 +34,6 @@ Data belongs to the module that created it; everyone else reads it or copies it.
   - member writes;
   - in-place array methods;
   - known mutator functions.
+
+[mdn-import]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+[airbnb-mutate-params]: https://github.com/airbnb/javascript#functions--mutate-params

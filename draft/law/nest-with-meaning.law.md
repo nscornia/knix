@@ -23,6 +23,7 @@ Review only. There is no numeric depth limit.
   - Cross-field validation needs the fields under a common ancestor group ([form validation][form-validation]).
 - **Angular child components:** a child never re-binds its parent's group with its own `[formGroup]`.
   - Bind `[formControl]` to the control it is given, or provide `ControlContainer` with `useExisting: FormGroupDirective` in `viewProviders` and use `formControlName`.
+    - The second form works because `formControlName` looks up `ControlContainer` limited to its host, and a host-limited lookup finds what the component provides through `viewProviders` ([hierarchical DI, `host` and `viewProviders`][hierarchical-di]).
   - Why: Angular Material shows a field's error when the control is invalid and either touched or its form submitted ([`error-options.ts`][error-options]). The form is the nearest `FormGroupDirective` ([`error-state.ts`][error-state]). A child's own `[formGroup]` becomes that nearest directive and never sees the parent's submit, so untouched invalid fields show no error on submit.
 
 [reactive-forms]: https://angular.dev/guide/forms/reactive-forms
@@ -30,3 +31,4 @@ Review only. There is no numeric depth limit.
 [form-validation]: https://angular.dev/guide/forms/form-validation
 [error-options]: https://github.com/angular/components/blob/main/src/material/core/error/error-options.ts
 [error-state]: https://github.com/angular/components/blob/main/src/material/core/common-behaviors/error-state.ts
+[hierarchical-di]: https://angular.dev/guide/di/hierarchical-dependency-injection

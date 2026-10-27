@@ -19,7 +19,7 @@ One writer keeps data flow unidirectional and traceable, and a consumer cannot e
 
 ## Caveat
 
-A read-only view does not stop mutation of an object value it holds. Return immutable data or copies where that matters; see [No mutating unowned data](no-mutating-unowned-data.md).
+A read-only view does not stop mutation of an object value it holds. Return immutable data or copies where that matters; see [No mutating unowned data](no-mutating-unowned-data.law.md).
 
 ## Narrowings
 

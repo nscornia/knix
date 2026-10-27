@@ -15,7 +15,9 @@ Monorepo for three npm scopes: `@knix/*` (framework-agnostic TypeScript utilitie
 - **ESLint IDs:** `@knix-law/<rule>`, and `@knix-law/template/<rule>` for template rules. `meta.name` is the package name and `meta.namespace` the prefix.
 - **Stylelint IDs:** `@knix-law/<rule>`.
 - **Source layout:** grouped by law as `rules/<law>/{rule,spec,doc}`; folders need not mirror the ID prefixes.
-- **Laws:** each law has one source file, `knowledge/law/<slug>.md`, identified by its slug. Rule docs link to it rather than restating it.
+- **Laws:** each law has one source file, `knowledge/law/<slug>.law.md`, identified by its slug. Rule docs link to it rather than restating it.
+  - `.ai/template/law.template.md` declares its required sections.
+  - A law under review lives in `draft/law/`, outside the template's checks, and moves to `knowledge/law/` once the operator approves it.
 - **Specification:** write rules and spec cases from the law text alone, never from another project's rule source, tests or fixtures.
 
 ## AI config
