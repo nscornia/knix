@@ -15,7 +15,7 @@
     }
   },
   "config": {},
-  "ecorn": "0.384.3",
+  "ecorn": "0.385.0",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
