@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Generated AI host output; .ai/ and AGENTS.md are the committed source.
+CLAUDE.md
+.claude/
+.opencode/
+
+# Machine-local ecorn settings.
+ai.config.local.jsonc

@@ -1,0 +1,23 @@
+{
+  "name": "@knix-ai/config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shareable AI-agent configuration for TypeScript and Angular projects, as an ecorn baseline.",
+  "keywords": [
+    "ai",
+    "agents",
+    "ecorn"
+  ],
+  "license": "MIT",
+  "author": "Nic Cornia",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nscornia/knix.git",
+    "directory": "packages/ai/config"
+  },
+  "homepage": "https://github.com/nscornia/knix/tree/main/packages/ai/config#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@knix-law/stylelint-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Stylelint presets that enforce the Nix Constitution laws.",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "license": "MIT",
+  "author": "Nic Cornia",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nscornia/knix.git",
+    "directory": "packages/law/stylelint-config"
+  },
+  "homepage": "https://github.com/nscornia/knix/tree/main/packages/law/stylelint-config#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

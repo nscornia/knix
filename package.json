@@ -1,0 +1,28 @@
+{
+  "name": "knix",
+  "private": true,
+  "description": "Monorepo for the @knix, @knix-law and @knix-ai packages.",
+  "license": "MIT",
+  "author": "Nic Cornia",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nscornia/knix.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/utils",
+    "packages/law/*",
+    "packages/ai/*"
+  ],
+  "scripts": {
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "3.0.3"
+  }
+}

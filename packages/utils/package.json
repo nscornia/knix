@@ -1,0 +1,22 @@
+{
+  "name": "@knix/utils",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Framework-agnostic TypeScript utilities, one tree-shakable entry point per area.",
+  "keywords": [
+    "typescript",
+    "utilities"
+  ],
+  "license": "MIT",
+  "author": "Nic Cornia",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nscornia/knix.git",
+    "directory": "packages/utils"
+  },
+  "homepage": "https://github.com/nscornia/knix/tree/main/packages/utils#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

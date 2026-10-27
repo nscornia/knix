@@ -1,0 +1,23 @@
+{
+  "name": "@knix-law/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "ESLint flat-config presets that enforce the Nix Constitution laws.",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config"
+  ],
+  "license": "MIT",
+  "author": "Nic Cornia",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nscornia/knix.git",
+    "directory": "packages/law/eslint-config"
+  },
+  "homepage": "https://github.com/nscornia/knix/tree/main/packages/law/eslint-config#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

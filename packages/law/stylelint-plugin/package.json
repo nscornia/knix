@@ -1,0 +1,22 @@
+{
+  "name": "@knix-law/stylelint-plugin",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Stylelint rules for the Nix Constitution laws no existing rule covers.",
+  "keywords": [
+    "stylelint",
+    "stylelint-plugin"
+  ],
+  "license": "MIT",
+  "author": "Nic Cornia",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nscornia/knix.git",
+    "directory": "packages/law/stylelint-plugin"
+  },
+  "homepage": "https://github.com/nscornia/knix/tree/main/packages/law/stylelint-plugin#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
