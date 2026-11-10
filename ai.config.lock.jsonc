@@ -10,7 +10,7 @@
             "tool-discipline"
           ],
           "mode": "subagent",
-          "model": "sonnet",
+          "model": "balanced",
           "native_tools": [
             "read",
             "glob",
@@ -201,6 +201,7 @@
         "iterate": {},
         "jira-track": {},
         "journal": {},
+        "model-refresh": {},
         "plan": {},
         "roadmap": {},
         "ship": {}
@@ -299,15 +300,21 @@
           "fragment-orphan": true,
           "generated-untracked": true,
           "glossary-budget": true,
+          "host-links": true,
           "instruction-budget": true,
           "instruction-placeholder": true,
           "journal": true,
           "knowledge-link": true,
           "ledger": true,
+          "legacy-name": true,
+          "model": true,
+          "model-refresh": true,
+          "opencode-runtime": true,
           "orphaned-scope": true,
           "posture-declared": true,
           "preamble-cap": true,
           "principle": true,
+          "project-lock": true,
           "readme-catalog": true,
           "reference-catalog": true,
           "roadmap": true,
@@ -1673,7 +1680,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.415.0"
+      "resolvedVersion": "0.422.3"
     }
   ],
   "component": {
@@ -1691,7 +1698,7 @@
     }
   },
   "config": {},
-  "ecorn": "0.415.0",
+  "ecorn": "0.422.3",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
