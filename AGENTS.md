@@ -12,12 +12,16 @@ Monorepo for three npm scopes: `@knix/*` (framework-agnostic TypeScript utilitie
 
 ## Lint rules
 
+- **Tool versions:** verify every rule, plugin and probe against the versions `packages/law/*/package.json` declares, and cite only plugins whose `peerDependencies` accept them.
 - **ESLint IDs:** `@knix-law/<rule>`, and `@knix-law/template/<rule>` for template rules. `meta.name` is the package name and `meta.namespace` the prefix.
 - **Stylelint IDs:** `@knix-law/<rule>`.
 - **Source layout:** grouped by law as `rules/<law>/{rule,spec,doc}`; folders need not mirror the ID prefixes.
 - **Laws:** each law has one source file, `knowledge/law/<slug>.law.md`, identified by its slug. Rule docs link to it rather than restating it.
   - `.ai/template/law.template.md` declares its required sections.
-  - A law under review lives in `draft/law/`, outside the template's checks, and moves to `knowledge/law/` once the operator approves it.
+  - A law under review lives in `draft/law/`, outside the template's checks, with its row in `draft/law/README.md`.
+  - No law is approved until every draft has been walked and the reviewing peer session has explicitly confirmed the walk is done.
+    - Then each moves to `knowledge/law/` with its row.
+  - A law's index row states nothing its `## Rule` does not.
 - **Specification:** write rules and spec cases from the law text alone, never from another project's rule source, tests or fixtures.
 
 ## AI config

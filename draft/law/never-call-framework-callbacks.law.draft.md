@@ -27,11 +27,11 @@ The framework guarantees when and how often a callback runs. Angular runs `ngOnI
   - every access form: dot, bracket, `.call` and an aliased reference;
   - calls outside any class, which is where spec code calls hooks.
 - Its hook list is checked against angular-eslint's.
-- **Specs:** reported at `warn`, with a message naming `fixture.detectChanges()` and `fixture.componentRef.setInput()`.
+- **Specs:** reported at `error`, with a message naming `fixture.detectChanges()` and `fixture.componentRef.setInput()`.
 
 [angular-lifecycle]: https://angular.dev/guide/components/lifecycle
 [angular-style]: https://angular.dev/style-guide
 [react-component]: https://react.dev/reference/react/Component
 [vue-lifecycle]: https://vuejs.org/guide/essentials/lifecycle.html
 [mdn-custom-elements]: https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
-[no-lifecycle-call]: https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts
+[no-lifecycle-call]: https://github.com/angular-eslint/angular-eslint/blob/957c6298c949b31169b3eeb96532bb8585f165b1/packages/eslint-plugin/src/rules/no-lifecycle-call.ts
