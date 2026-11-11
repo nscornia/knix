@@ -18,5 +18,11 @@
   "homepage": "https://github.com/nscornia/knix/tree/main/packages/law/stylelint-plugin#readme",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "stylelint": "^17.16.0"
+  },
+  "devDependencies": {
+    "stylelint": "17.16.0"
   }
 }
