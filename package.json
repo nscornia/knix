@@ -19,6 +19,7 @@
   ],
   "scripts": {
     "changeset": "changeset",
+    "check:law-links": "node scripts/check-law-links.mjs",
     "version-packages": "changeset version",
     "release": "changeset publish"
   },
