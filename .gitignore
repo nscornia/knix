@@ -10,6 +10,8 @@ coverage/
 CLAUDE.md
 .claude/
 .opencode/
+opencode.json
+opencode.json
 
 # Machine-local ecorn settings.
 ai.config.local.jsonc
