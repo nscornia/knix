@@ -1,6 +1,8 @@
 # Handle errors where the fallback belongs
 
-<!-- TODO: one sentence saying what the law protects. It is ruled with the law; leave this TODO until it is. The title is a working title, also pending a ruling. -->
+Where `catchError` sits decides how much of a result one failure costs.
+
+<!-- TODO: the title is a working title, pending a ruling. -->
 
 ## Rule
 
@@ -8,7 +10,7 @@
 
 ## Why
 
-<!-- TODO: one rationale paragraph. It stays a TODO until it is ruled; never draft a rationale to fill it. -->
+`catchError` swaps the stream it catches for its fallback, so where it sits decides how much a failure takes with it. When one source of a `forkJoin` fails, the `forkJoin` fails too and unsubscribes from the rest: a handler on the `forkJoin` replaces every result, including those that loaded, while a handler on each source replaces only the one that failed. The right place is the one whose fallback matches what a failure should lose. Sources that share a fallback pass one named handler, because copies written separately drift apart when one is changed.
 
 - **One failure ends the combination:**
   - "If any given observable errors at some point, `forkJoin` will error as well and immediately unsubscribe from the other observables." ([RxJS `forkJoin`][rxjs-forkjoin-error])

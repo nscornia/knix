@@ -1,6 +1,8 @@
 # Batch bulk actions into one request
 
-<!-- TODO: one sentence saying what the law protects. It is ruled with the law; leave this TODO until it is. The title is a working title, also pending a ruling. -->
+A bulk action reaches the server as one request, so the server decides what a partial failure means.
+
+<!-- TODO: the title is a working title, pending a ruling. -->
 
 ## Rule
 
@@ -8,7 +10,7 @@
 
 ## Why
 
-<!-- TODO: one rationale paragraph. It stays a TODO until it is ruled; never draft a rationale to fill it. -->
+One request per item turns a single action into many independent ones. Each can fail on its own, so a partial failure leaves some items changed and others not, and the client has to work out which and say so. An endpoint that takes the list lets the server, which owns the data, decide whether the action is all-or-nothing or reports each item's result, and state that once in its contract. A per-item loop stays allowed where no such endpoint exists, because a client can't build one; tracking it keeps the stopgap from becoming permanent.
 
 - **Batch methods:** "Some APIs need to allow users to modify a set of resources in a single transaction. A batch update method provides this functionality." ([AIP-234][aip-234-intro])
 - **Atomic or partial success:**

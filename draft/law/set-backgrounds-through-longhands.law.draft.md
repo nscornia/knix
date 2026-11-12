@@ -1,6 +1,8 @@
 # Set backgrounds through longhands
 
-<!-- TODO: one sentence saying what the law protects. It is ruled with the law; leave this TODO until it is. The title is a working title, also pending a ruling. -->
+A background declaration changes only the property it names.
+
+<!-- TODO: the title is a working title, pending a ruling. -->
 
 ## Rule
 
@@ -8,7 +10,7 @@
 
 ## Why
 
-<!-- TODO: one rationale paragraph. It stays a TODO until it is ruled; never draft a rationale to fill it. -->
+The `background` shorthand resets every background sub-property it leaves out, and `background-blend-mode` as well. A declaration written to change a color therefore also clears an image, position or size that another rule set, and the loss shows only where both rules apply. A longhand changes the one property it names and leaves the rest to the cascade. `background: none` is the exception because a full reset is what it says.
 
 - **Shorthands reset what they omit:**
   - "When values are omitted from a shorthand form, unless otherwise defined, each “missing” sub-property is assigned its initial value." ([CSS Cascading and Inheritance Level 5][css-cascade-shorthand])

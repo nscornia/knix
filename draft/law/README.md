@@ -33,3 +33,4 @@ Laws under review. None is approved until every draft has been walked and the re
 | [Set backgrounds through longhands](set-backgrounds-through-longhands.law.draft.md) | `background-color` or `background-image`, never the `background` shorthand except `background: none`. |
 | [Handle errors where the fallback belongs](handle-errors-where-the-fallback-belongs.law.draft.md) | Put `catchError` where its fallback belongs; write a shared fallback once. |
 | [Batch bulk actions into one request](batch-bulk-actions-into-one-request.law.draft.md) | A bulk action is one request to a list endpoint; a per-item loop until then is tracked tech debt. |
+| [Alphabetize unordered collections](alphabetize-unordered-collections.law.draft.md) | Sort a marked collection whose order means nothing; one whose order means something keeps it. |
