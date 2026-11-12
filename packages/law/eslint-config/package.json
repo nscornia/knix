@@ -22,10 +22,12 @@
   },
   "peerDependencies": {
     "eslint": "^10.13.0",
+    "eslint-plugin-perfectionist": "^5.13.0",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
     "eslint": "10.13.0",
+    "eslint-plugin-perfectionist": "5.13.0",
     "typescript": "6.0.3"
   }
 }
