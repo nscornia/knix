@@ -281,6 +281,7 @@
         "stage": {
           "adapter-anchoring": true,
           "adr": true,
+          "adr-citation": true,
           "ai-config": true,
           "append-only-gated": true,
           "baseline-drift": true,
@@ -309,6 +310,7 @@
           "legacy-name": true,
           "model": true,
           "model-refresh": true,
+          "nested-repos": true,
           "opencode-runtime": true,
           "orphaned-scope": true,
           "posture-declared": true,
@@ -900,14 +902,11 @@
       },
       "template": {
         "adr": {
-          "durable_citations": true,
+          "durable_citations": false,
           "generated": false,
           "slot": {
-            "ADR_NUMBER": "an ADR's zero-padded number, e.g. 085",
-            "DECISION_TITLE": "an ADR's decision title, e.g. Templates declare their placeholders",
-            "KEBAB_TITLE": "an ADR's title as a kebab-case slug, e.g. templates-declare-placeholders",
-            "OTHER_NUMBER": "the number of another ADR a link points at, e.g. 042",
-            "SLICE_SLUG": "the roadmap slice's kebab-case slug, e.g. template-placeholders-declared-and-checked"
+            "DECISION_TITLE": "an ADR's decision title, e.g. Hooks compile from one manifest",
+            "KEBAB_TITLE": "an ADR's subsystem as a kebab-case slug, e.g. hooks"
           },
           "target_tokens": 2200
         },
@@ -1068,7 +1067,8 @@
         ],
         "glossary_tokens": 2000,
         "preamble_tokens": 1250,
-        "session_start_tokens": 15000
+        "session_start_tokens": 15000,
+        "tool_output_tokens": 7500
       },
       "git": {
         "default_branch": "auto",
@@ -1680,7 +1680,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.422.3"
+      "resolvedVersion": "0.428.0"
     }
   ],
   "component": {
@@ -1697,8 +1697,7 @@
       }
     }
   },
-  "config": {},
-  "ecorn": "0.422.3",
+  "ecorn": "0.428.0",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
