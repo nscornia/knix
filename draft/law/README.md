@@ -30,3 +30,6 @@ Laws under review. None is approved until every draft has been walked and the re
 | [Identify by key, not display text](identify-by-key-not-display-text.law.draft.md) | Use the stable key, never display text, as an identifier, comparison target or data key. |
 | [Assert exact values, not truthiness](assert-exact-values-not-truthiness.law.draft.md) | A test asserts the exact expected value, not truthiness; presence and absence stay allowed. |
 | [Use design tokens for style values](use-design-tokens-for-style-values.law.draft.md) | Color, spacing, border radius and typography come from design tokens, never literals. |
+| [Set backgrounds through longhands](set-backgrounds-through-longhands.law.draft.md) | `background-color` or `background-image`, never the `background` shorthand except `background: none`. |
+| [Handle errors where the fallback belongs](handle-errors-where-the-fallback-belongs.law.draft.md) | Put `catchError` where its fallback belongs; write a shared fallback once. |
+| [Batch bulk actions into one request](batch-bulk-actions-into-one-request.law.draft.md) | A bulk action is one request to a list endpoint; a per-item loop until then is tracked tech debt. |

@@ -6,6 +6,7 @@ Code and resources live with the unit that owns them, and move up only when they
 
 - Place code and resources with their owner.
 - When two or more owners share something, hoist it to their nearest common owner.
+- **Defaults:** Give a shared default one definition, at the outermost scope that shares it, and reference it from there; a narrower scope states only a value that differs. Equal literals are one default only when they mean the same setting; values equal by coincidence stay separate.
 - Pass shared code down explicitly. If middle layers only forward it, extract them and pass content as children instead.
 - Use the framework's injection (context, provide/inject, a DI provider) only when many distant consumers need it.
   - Provide it at the nearest common owner, not the root.
@@ -63,6 +64,8 @@ Code that lives with its owner is found, changed and removed together with that 
 - Simpler alternative: `import-x/no-restricted-paths` with path zones, needing no element configuration ([rule docs][no-restricted-paths]).
   - It needs `createNodeResolver()` in `import-x/resolver-next`. Without a resolver, nothing is reported.
 - Explicit passing and provider scope: review only. No lint rule detects forward-only layers or an over-broad provider.
+- **Defaults:** review only.
+  - Equal literals don't show whether they mean the same setting, so no lint rule can tell a repeated default from a coincidence.
 
 [colocation]: https://kentcdodds.com/blog/colocation
 [react-lifting]: https://react.dev/learn/sharing-state-between-components

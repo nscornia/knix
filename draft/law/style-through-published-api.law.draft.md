@@ -6,6 +6,7 @@ A dependency is styled only through the styling surface it publishes.
 
 - Never select a dependency's private DOM structure or class names.
 - When the published API cannot express a need, the wrapping library extends or owns the component. Consumers never reach in.
+- Never mark a declaration `!important`; win through the cascade instead. Match or raise the specificity you must beat, or, for a stylesheet you load yourself, load it into a cascade layer, since unlayered styles beat layered ones. A library keeps its own selectors low in specificity, using `:where()` where needed, so a consumer's ordinary rule overrides them. `!important` is only for a declaration that must beat every rule on one component while it applies: replacing an inline style a script sets, a forced-colors or reduced-motion override, or a short-lived state class such as one applied during measurement. It is scoped to that component, never `*`, and its disable names the case and what it beats.
 
 ## Why
 

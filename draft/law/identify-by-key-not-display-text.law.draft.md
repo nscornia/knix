@@ -69,16 +69,18 @@
   - Inside the checked expression, a template literal or string method such as `trim` applied to display text gives display text (probed).
   - Sorting and an ordering operator such as `<` are not reported (probed).
   - Passing display text to the search matcher's plain `string` parameters drops the brand, so the matcher's body is not reported (probed).
-- **Shared automation code:** a typed rule at `error` (probed). <!-- TODO: the rule ID, and how its config marks the shared automation pattern for text-based queries, pending a ruling. -->
-  - Option: `{ testIdAttribute: '<attribute>' }`, one attribute, default `data-testid`, set to the value the repository's test runner uses.
-  - Files: test files, and a `files` pattern each repository sets for shared automation code, such as page objects, support commands, harnesses and fixtures.
-  - Calls: only those whose signature Playwright, Cypress, Testing Library, the DOM, Angular's `By.css` or a CDK harness's `locatorFor` declares, so `Map.get` is not reported.
-  - Reported:
-    - A selector argument whose type doesn't prove one selector on that attribute, such as `[data-testid="save"]`, or a Cypress `@alias`.
-    - That includes a plain `string`, a template with a class around its expression, and a constant or page-object field holding a class.
-    - `getElementById`, `getElementsByClassName`, `getElementsByTagName`, `getElementsByTagNameNS` and `getElementsByName`.
-    - A structure call, directly or through Cypress `invoke`: `nth`, `first`, `last`, `eq`, `parent`, `parents`, `parentsUntil`, `children`, `siblings`, `next`, `nextAll`, `nextUntil`, `prev`, `prevAll` or `prevUntil`.
-    - Only in the shared automation pattern, any text-based query, even through a key, such as `getByText`, `getByLabel`, `hasText` or Cypress `contains`.
+- **Shared automation code:** two typed rules at `error`, whose checks were probed as one prototype rule. <!-- TODO: the two rule IDs, pending a ruling. -->
+  - Both act only on calls whose signature a listed API declares, so `Map.get` is not reported.
+    - Listed APIs: Playwright, Cypress, Testing Library, the DOM, Angular's `By.css` and a CDK harness's `locatorFor`.
+  - **Shared automation pattern:** a `files` pattern each repository sets, such as page objects, support commands, harnesses and fixtures.
+  - **Selector rule,** enabled on test files and the shared automation pattern:
+    - Option: `{ testIdAttribute: '<attribute>' }`, one attribute, default `data-testid`, set to the value the repository's test runner uses.
+    - Reported: a selector argument whose type doesn't prove one selector on that attribute, such as `[data-testid="save"]`, or a Cypress `@alias`.
+    - Also reported: a plain `string`, a template with a class around its expression, and a constant or page-object field holding a class.
+    - Also reported: `getElementById`, `getElementsByClassName`, `getElementsByTagName`, `getElementsByTagNameNS` and `getElementsByName`.
+    - Also reported: a structure call, directly or through Cypress `invoke`: `nth`, `first`, `last`, `eq`, `parent`, `parents`, `parentsUntil`, `children`, `siblings`, `next`, `nextAll`, `nextUntil`, `prev`, `prevAll` or `prevUntil`.
+  - **Text-query rule,** enabled on the shared automation pattern only: any text-based query is reported, even through a key.
+    - Examples: `getByText`, `getByLabel`, `hasText` and Cypress `contains`.
   - Covered elsewhere: a role query's literal name, by the Test files rule above; an `any` receiver, by `no-unsafe-call` and `no-unsafe-member-access` from [Type values precisely](type-values-precisely.law.draft.md).
 - **Optional, per repository:** checks that a key exists in the catalog. Each reads only a key inside a translate call (probed).
   - Typed keys: i18next's typed `resources` and FormatJS's typed message `ids` reject an unknown key at compile time.

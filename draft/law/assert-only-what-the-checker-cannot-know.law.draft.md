@@ -7,6 +7,7 @@ A type assertion is never checked at runtime, so it states only what the compile
 - Remove an assertion that does not change the type.
 - Type a literal by annotating its target (`const x: T = …`, `Record<K, T>`) or with `satisfies`, never `as`.
 - Narrow with a runtime check (type guard, `instanceof`, `in`) or fix the upstream type, never with an assertion.
+- A type guard (`x is T`) returns `true` exactly when `x` is a `T`, and `false` exactly when it is not, since TypeScript checks neither. Where a check can't be exact both ways, return `boolean`, or leave the return type off so TypeScript infers a predicate only when it is exact.
 - Where an assertion is still needed, a comment says why it is safe. A double assertion goes through `unknown`, never `any`.
 - Set `strict: true` explicitly, and set no strict-family flag to `false`.
 - `as const` is exempt.

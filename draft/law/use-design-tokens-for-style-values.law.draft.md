@@ -18,3 +18,4 @@
 
 - [Use the design system](use-the-design-system.law.draft.md) governs which component a need uses; a hand-built one builds from the design system's tokens.
 - [Style through the published API](style-through-published-api.law.draft.md) governs how a dependency is styled, including how tokens are named.
+- [Set backgrounds through longhands](set-backgrounds-through-longhands.law.draft.md) governs which background property a value is set through.
