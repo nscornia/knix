@@ -53,6 +53,7 @@ A disable is an exception to static analysis. Without a reason, the next reader 
 - These laws each take a described disable for a needed exception:
   - [Assert only what the checker cannot know](assert-only-what-the-checker-cannot-know.law.draft.md);
   - [Export only what another module imports](export-only-what-another-module-imports.law.draft.md);
+  - [Keep CI checks enabled and blocking](keep-ci-checks-enabled-and-blocking.law.draft.md);
   - [Use the design system](use-the-design-system.law.draft.md).
 
 [eslint-rfc-description]: https://github.com/eslint/rfcs/blob/93824bf80557507369728624ae7e3fa794f784ac/designs/2019-description-in-directive-comments/README.md?plain=1#L13

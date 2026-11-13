@@ -37,6 +37,10 @@ Every level of nesting is one more step in every path, and in many frameworks it
 
 - Review only. There is no numeric depth limit.
 
+## Related
+
+- [Return early and keep nesting shallow](return-early-and-keep-nesting-shallow.law.draft.md) governs nesting in code; this law governs nesting in data shapes.
+
 [reactive-forms]: https://angular.dev/guide/forms/reactive-forms
 [form-group]: https://angular.dev/api/forms/FormGroup
 [form-validation]: https://angular.dev/guide/forms/form-validation

@@ -67,6 +67,10 @@ Code that lives with its owner is found, changed and removed together with that 
 - **Defaults:** review only.
   - Equal literals don't show whether they mean the same setting, so no lint rule can tell a repeated default from a coincidence.
 
+## Related
+
+- [Import within a package by relative path](import-within-a-package-by-relative-path.law.draft.md) governs how a file in the same package is imported once it is placed.
+
 [colocation]: https://kentcdodds.com/blog/colocation
 [react-lifting]: https://react.dev/learn/sharing-state-between-components
 [react-context]: https://react.dev/learn/passing-data-deeply-with-context

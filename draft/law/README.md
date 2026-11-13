@@ -34,3 +34,8 @@ Laws under review. None is approved until every draft has been walked and the re
 | [Handle errors where the fallback belongs](handle-errors-where-the-fallback-belongs.law.draft.md) | Put `catchError` where its fallback belongs; write a shared fallback once. |
 | [Batch bulk actions into one request](batch-bulk-actions-into-one-request.law.draft.md) | A bulk action is one request to a list endpoint; a per-item loop until then is tracked tech debt. |
 | [Alphabetize unordered collections](alphabetize-unordered-collections.law.draft.md) | Sort a marked collection whose order means nothing; one whose order means something keeps it. |
+| [Translate user-facing text](translate-user-facing-text.law.draft.md) | Text a user reads comes from the translation catalog; a message with variable parts is one catalog entry. |
+| [Import within a package by relative path](import-within-a-package-by-relative-path.law.draft.md) | A file in the same package is imported by relative path, never a root path or alias; another package by its name. |
+| [Return early and keep nesting shallow](return-early-and-keep-nesting-shallow.law.draft.md) | Return or throw once a case is settled, with no `else` after it; nest blocks at most four deep in a function. |
+| [Keep CI checks enabled and blocking](keep-ci-checks-enabled-and-blocking.law.draft.md) | CI jobs that check the change stay enabled and blocking; a failing gate is fixed or narrowed with a described disable. |
+| [Add a file only when it has content](add-a-file-only-when-it-has-content.law.draft.md) | Never commit an empty or placeholder file; a file a tool requires to exist is the one exception. |

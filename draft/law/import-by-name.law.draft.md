@@ -61,6 +61,10 @@ Two reasons. Explicitness: naming each member keeps a unit's dependencies visibl
 - **CommonJS-only entry:** a `@knix-law` rule reads the resolved package manifest's `type`, `module` and `exports`.
   - `eslint-plugin-lodash`'s `import-scope` doesn't cover this. Its `member` mode accepts `import {map} from 'lodash'` ([rule docs][lodash-import-scope]).
 
+## Related
+
+- [Import within a package by relative path](import-within-a-package-by-relative-path.law.draft.md) governs the path an import names; this law governs what it names.
+
 [wp-tree-shaking]: https://github.com/webpack/webpack.js.org/blob/04fe6d689ccfbe7c7097ad3ff96ba2e15e388675/src/content/guides/tree-shaking.mdx
 [esbuild-api]: https://esbuild.github.io/api/
 [wp5-release]: https://github.com/webpack/webpack.js.org/blob/04fe6d689ccfbe7c7097ad3ff96ba2e15e388675/src/content/blog/2020-10-10-webpack-5-release.mdx

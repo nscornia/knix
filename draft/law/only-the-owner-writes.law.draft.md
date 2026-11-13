@@ -12,6 +12,7 @@
     - No `export let`.
     - Callbacks that capture an instance never live in module scope.
 - **Consumers:** copy first. Never write into, merge into, sort or push onto an imported object.
+  - Copy a value only to change it, or to stop a reference someone else holds from being shared. A value nothing else references, such as an object a factory has just created, is used directly, not spread into a copy.
 
 ## Why
 
@@ -58,6 +59,7 @@ A read-only view does not stop mutation of an object value it holds. Return immu
 - **RxJS:** `rxjs-x/no-exposed-subjects` with `allowProtected: false` ([rule docs][no-exposed-subjects]).
   - It misses module-scope and object-literal exposure, which stays review-only.
 - **Angular signals:** review only.
+- **Unneeded copies:** review only.
 
 [mdn-import]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 [airbnb-mutate-params]: https://github.com/airbnb/javascript#functions--mutate-params

@@ -116,6 +116,7 @@
 ## Related
 
 - [Explain every disable](explain-every-disable.law.draft.md) governs the disable the boundary adapter takes.
+- [Translate user-facing text](translate-user-facing-text.law.draft.md) governs where display text comes from: the translation catalog, through the translate call.
 
 [no-restricted-syntax]: https://github.com/eslint/eslint/blob/4637f9827a1ba137498eaee70957850621082815/docs/src/rules/no-restricted-syntax.md
 [collator]: https://github.com/mdn/content/blob/106f215d6fb32a7ee0afe09f01a82323d39cd1f0/files/en-us/web/javascript/reference/global_objects/intl/collator/collator/index.md?plain=1#L66
