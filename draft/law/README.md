@@ -39,3 +39,7 @@ Laws under review. None is approved until every draft has been walked and the re
 | [Return early and keep nesting shallow](return-early-and-keep-nesting-shallow.law.draft.md) | Return or throw once a case is settled, with no `else` after it; nest blocks at most four deep in a function. |
 | [Keep CI checks enabled and blocking](keep-ci-checks-enabled-and-blocking.law.draft.md) | CI jobs that check the change stay enabled and blocking; a failing gate is fixed or narrowed with a described disable. |
 | [Add a file only when it has content](add-a-file-only-when-it-has-content.law.draft.md) | Never commit an empty or placeholder file; a file a tool requires to exist is the one exception. |
+| [Measure before optimizing](measure-before-optimizing.law.draft.md) | Add an optimization layer only for a measured problem whose gain outweighs its complexity; framework memoisation is not one. |
+| [Fetch data from its owning system](fetch-data-from-its-owning-system.law.draft.md) | Data another system owns comes from it at runtime; data the code owns lives in its own module beside its user. |
+| [Build markup in templates](build-markup-in-templates.law.draft.md) | Markup comes from a template, never an HTML string written or bound in code; HTML content goes through a sanitizer. |
+| [Build arrays with map and filter](build-arrays-with-map-and-filter.law.draft.md) | Build an array from another with `map` and `filter`, not by pushing from a loop; a loop doing more stays a loop. |

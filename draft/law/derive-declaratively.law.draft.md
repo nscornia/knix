@@ -36,6 +36,12 @@ A hand-kept copy of derivable state drifts as soon as one update path forgets to
 - A cross-file template lint rule at `error`, covering the hard rule only.
 - Rejected: `@angular-eslint/template/no-call-expression`, because it flags signal reads.
 
+## Related
+
+- [Measure before optimizing](measure-before-optimizing.law.draft.md) governs hand-written optimization layers; the memoisation this law requires is not one.
+- [Fetch data from its owning system](fetch-data-from-its-owning-system.law.draft.md) forbids pasting a copy of another system's data into code.
+- [Build arrays with map and filter](build-arrays-with-map-and-filter.law.draft.md) governs how plain code builds a derived array.
+
 [angular-cds]: https://angular.dev/api/core/ChangeDetectionStrategy
 [react-redundant-state]: https://react.dev/learn/choosing-the-state-structure#avoid-redundant-state
 [angular-signals]: https://angular.dev/guide/signals

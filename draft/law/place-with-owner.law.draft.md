@@ -70,6 +70,7 @@ Code that lives with its owner is found, changed and removed together with that 
 ## Related
 
 - [Import within a package by relative path](import-within-a-package-by-relative-path.law.draft.md) governs how a file in the same package is imported once it is placed.
+- [Fetch data from its owning system](fetch-data-from-its-owning-system.law.draft.md) places data the code owns in its own module beside its user, and fetches data another system owns.
 
 [colocation]: https://kentcdodds.com/blog/colocation
 [react-lifting]: https://react.dev/learn/sharing-state-between-components

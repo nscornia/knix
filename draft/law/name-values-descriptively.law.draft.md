@@ -7,6 +7,7 @@ A name says what the value represents.
 - Name every value for what it represents, with no ambiguous abbreviations.
 - A single letter is allowed only where the letter is itself the convention: `i`/`j`/`k` loop indices, `x`/`y`/`z` coordinates, `a`/`b` in a comparator, and single upper-case type parameters.
 - Everything else gets a word, however short its scope, callback parameters included (e.g. `events.map((event) => event.id)`, not `(e) => e.id`).
+- Give a number a name when the code around it doesn't show what it means: a constant named for what it is (`MAX_RETRIES = 3`), or an existing named value (`HttpStatusCode.NotFound`). A number whose meaning is plain where it sits, such as a unit conversion (`* 1000` for seconds to milliseconds) or the arithmetic in a named constant's own value, stays a literal.
 - **Unused values:**
   - Leave an unused value unbound where the language allows: omit the catch binding (`catch {}`), elide array elements (`[, second]`), drop trailing parameters, and rely on rest siblings (`const { id, ...rest } = obj`).
   - Where a binding is required, name it `_`, or `_` plus a descriptive name (`(_row, _column, value)`).
@@ -17,6 +18,7 @@ A name says what the value represents.
     - parameters of overload signatures, `declare` functions and methods, and abstract methods
     - setter parameters and parameter properties
   - `for (const _ of xs)` is not exempt.
+  - Delete an import, variable or function nothing reads. A binding the language requires stays, under the `_` names above; an import kept only for its side effects is written without a binding (`import './polyfills'`).
 
 ## Why
 
@@ -79,6 +81,7 @@ Readers find defects faster in code whose names are words than in code whose nam
     - `ObjectPattern > Property[shorthand=true] > Identifier.value[name.length=1]:not([name=/^[ijkxyzab_]$/])`: a single-letter shorthand destructured name, which `id-length` skips under `properties: 'never'`.
 - Review checks that each allowed letter is used for its convention (`i`/`j`/`k` as loop indices, `a`/`b` in a comparator, and so on). No rule sees meaning.
 - Angular template aliases (`let i = $index`) are review-only.
+- **Unexplained numbers:** review only.
 - With unicorn's `recommended`, turn off its `i` and `j` replacements, which rename both to `index` ([`name-replacements`][unicorn-name-replacements]).
   - `replacements: { i: false, j: false }`.
 
