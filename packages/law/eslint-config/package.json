@@ -23,8 +23,16 @@
   "peerDependencies": {
     "@angular-eslint/eslint-plugin-template": "^22.6.0",
     "@angular-eslint/template-parser": "^22.6.0",
+    "@e18e/eslint-plugin": "^0.8.1",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
     "eslint": "^10.13.0",
+    "eslint-plugin-boundaries": "^7.4.3",
+    "eslint-plugin-compat": "^7.0.2",
+    "eslint-plugin-import-x": "^4.18.1",
+    "eslint-plugin-jsdoc": "^65.4.7",
+    "eslint-plugin-n": "^18.5.0",
     "eslint-plugin-perfectionist": "^5.13.0",
+    "eslint-plugin-rxjs-x": "^1.0.6",
     "eslint-plugin-sonarjs": "^4.2.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.1"
@@ -35,13 +43,24 @@
     },
     "@angular-eslint/template-parser": {
       "optional": true
+    },
+    "eslint-plugin-rxjs-x": {
+      "optional": true
     }
   },
   "devDependencies": {
     "@angular-eslint/eslint-plugin-template": "22.6.0",
     "@angular-eslint/template-parser": "22.6.0",
+    "@e18e/eslint-plugin": "0.8.1",
+    "@eslint-community/eslint-plugin-eslint-comments": "4.8.1",
     "eslint": "10.13.0",
+    "eslint-plugin-boundaries": "7.4.3",
+    "eslint-plugin-compat": "7.0.2",
+    "eslint-plugin-import-x": "4.18.1",
+    "eslint-plugin-jsdoc": "65.4.7",
+    "eslint-plugin-n": "18.5.0",
     "eslint-plugin-perfectionist": "5.13.0",
+    "eslint-plugin-rxjs-x": "1.0.6",
     "eslint-plugin-sonarjs": "4.2.2",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.2"
