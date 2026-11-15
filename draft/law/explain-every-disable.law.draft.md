@@ -53,6 +53,7 @@ A disable is an exception to static analysis. Without a reason, the next reader 
 - These laws each take a described disable for a needed exception:
   - [Assert only what the checker cannot know](assert-only-what-the-checker-cannot-know.law.draft.md);
   - [Build markup in templates](build-markup-in-templates.law.draft.md);
+  - [Default with nullish coalescing](default-with-nullish-coalescing.law.draft.md);
   - [Export only what another module imports](export-only-what-another-module-imports.law.draft.md);
   - [Keep CI checks enabled and blocking](keep-ci-checks-enabled-and-blocking.law.draft.md);
   - [Use the design system](use-the-design-system.law.draft.md).

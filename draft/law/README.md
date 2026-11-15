@@ -43,3 +43,6 @@ Laws under review. None is approved until every draft has been walked and the re
 | [Fetch data from its owning system](fetch-data-from-its-owning-system.law.draft.md) | Data another system owns comes from it at runtime; data the code owns lives in its own module beside its user. |
 | [Build markup in templates](build-markup-in-templates.law.draft.md) | Markup comes from a template, never an HTML string written or bound in code; HTML content goes through a sanitizer. |
 | [Build arrays with map and filter](build-arrays-with-map-and-filter.law.draft.md) | Build an array from another with `map` and `filter`, not by pushing from a loop; a loop doing more stays a loop. |
+| [Default with nullish coalescing](default-with-nullish-coalescing.law.draft.md) | Default a missing value with `??`, never `\|\|`; a deliberate `\|\|` takes a disable comment that says so. |
+| [Ship no debug console output](ship-no-debug-console-output.law.draft.md) | Browser code calls only `console.warn` or `console.error`; code that never ships is exempt by path. |
+| [List dependencies by what uses them](list-dependencies-by-what-uses-them.law.draft.md) | `devDependencies` for packages only tests, tooling or builds use; shipped code never imports a test package. |

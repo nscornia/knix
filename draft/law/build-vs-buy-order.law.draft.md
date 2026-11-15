@@ -67,6 +67,8 @@ Every dependency is code you ship, patch and keep current, along with everything
 - [Reuse existing utilities](reuse-existing-utilities.law.draft.md) covers designated utilities, from the codebase or an installed shared package, which come before this order applies.
 - [Use the design system](use-the-design-system.law.draft.md) covers UI components, which come before this order applies.
 - [Build markup in templates](build-markup-in-templates.law.draft.md) sends content that must arrive as HTML through the sanitizer this law names.
+- [Default with nullish coalescing](default-with-nullish-coalescing.law.draft.md) rules `??` over `||` for every default, not only in a swap.
+- [List dependencies by what uses them](list-dependencies-by-what-uses-them.law.draft.md) rules which manifest field declares a package.
 
 [n-extraneous]: https://github.com/eslint-community/eslint-plugin-n/blob/6e1353be12a49ca570b750eb7386215d881ee6a3/docs/rules/no-extraneous-import.md
 [owasp-a03]: https://github.com/OWASP/Top10/blob/3a31f35346c3f4e90f350395124382fa53af2afe/2025/docs/en/A03_2025-Software_Supply_Chain_Failures.md
