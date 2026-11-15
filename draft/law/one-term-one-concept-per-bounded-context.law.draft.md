@@ -63,6 +63,10 @@ Readers take a new word to mean a new thing. Two names for one concept send them
   - A Vale disable is scoped to one term, `<!-- vale <Style>.Terms["<phrase>"] = NO -->` ([`file.go`][vale-control-match]), with its reason on the line above.
 - **Renames:** checked in review.
 
+## Related
+
+- [Name the public surface for its users](name-public-surface-for-its-users.law.draft.md) puts a ruled-out public name on this law's avoid-list.
+
 [ms-terms]: https://github.com/MicrosoftDocs/microsoft-style-guide/blob/c6945c32294e845a84b192a094fb1b7c2c452a6a/styleguide/word-choice/use-technical-terms-carefully.md?plain=1#L27
 [aip-140]: https://github.com/aip-dev/google.aip.dev/blob/2ccc61a4e09882bdd63aea1a42dceebc37bf3bd5/aip/general/0140.md?plain=1#L52-L53
 [aip-190-overloading]: https://github.com/aip-dev/google.aip.dev/blob/2ccc61a4e09882bdd63aea1a42dceebc37bf3bd5/aip/general/0190.md?plain=1#L45

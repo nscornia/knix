@@ -85,6 +85,10 @@ Readers find defects faster in code whose names are words than in code whose nam
 - With unicorn's `recommended`, turn off its `i` and `j` replacements, which rename both to `index` ([`name-replacements`][unicorn-name-replacements]).
   - `replacements: { i: false, j: false }`.
 
+## Related
+
+- [Name the public surface for its users](name-public-surface-for-its-users.law.draft.md) names a library's public surface in its consumers' terms.
+
 [google-js]: https://github.com/google/styleguide/blob/dde305184e15530cfc321303522060b9883664ff/jsguide.md#61-rules-common-to-all-identifiers
 [google-ts]: https://github.com/google/styleguide/blob/dde305184e15530cfc321303522060b9883664ff/tsguide.html#L2780
 [google-go]: https://github.com/google/styleguide/blob/dde305184e15530cfc321303522060b9883664ff/go/decisions.md#single-letter-variable-names

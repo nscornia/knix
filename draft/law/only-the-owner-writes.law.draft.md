@@ -61,6 +61,10 @@ A read-only view does not stop mutation of an object value it holds. Return immu
 - **Angular signals:** review only.
 - **Unneeded copies:** review only.
 
+## Related
+
+- [Read each observable once per template](read-each-observable-once-per-template.law.draft.md) reads that field through `async` once per template.
+
 [mdn-import]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 [airbnb-mutate-params]: https://github.com/airbnb/javascript#functions--mutate-params
 [async-pipe]: https://github.com/angular/angular/blob/37563fc32267fd0fcbdff8caf98862962e5d46b5/packages/common/src/pipes/async_pipe.ts

@@ -46,3 +46,5 @@ Laws under review. None is approved until every draft has been walked and the re
 | [Default with nullish coalescing](default-with-nullish-coalescing.law.draft.md) | Default a missing value with `??`, never `\|\|`; a deliberate `\|\|` takes a disable comment that says so. |
 | [Ship no debug console output](ship-no-debug-console-output.law.draft.md) | Browser code calls only `console.warn` or `console.error`; code that never ships is exempt by path. |
 | [List dependencies by what uses them](list-dependencies-by-what-uses-them.law.draft.md) | `devDependencies` for packages only tests, tooling or builds use; shipped code never imports a test package. |
+| [Read each observable once per template](read-each-observable-once-per-template.law.draft.md) | Read an observable through `async` once per template; bind it with `@let` or `@if (…; as x)` and reuse the name. |
+| [Name the public surface for its users](name-public-surface-for-its-users.law.draft.md) | Name public tokens, inputs, outputs and configuration keys for what they mean to users, not how they're built. |
