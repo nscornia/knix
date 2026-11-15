@@ -322,6 +322,7 @@
           "roadmap": true,
           "roadmap-cycle-cap": true,
           "runbook": true,
+          "service-endpoint": true,
           "skill-budget": true,
           "skill-command-ref": true,
           "skill-format": true,
@@ -339,12 +340,14 @@
       },
       "view": {},
       "worktree": {
+        "land": null,
         "landing_branch": null,
         "mode": "off",
         "provision": {
           "clone": [],
           "run": []
-        }
+        },
+        "repo": {}
       }
     },
     "definition": {
@@ -1051,6 +1054,150 @@
         }
       },
       "tools": {
+        "aha": {
+          "api": {
+            "aha": {
+              "auth": {
+                "scheme": "bearer"
+              },
+              "credential": [
+                "AHA_API_TOKEN",
+                "AHA_TOKEN"
+              ],
+              "request": "/api/v1/me",
+              "url": {
+                "env": [
+                  "AHA_HOST"
+                ]
+              }
+            }
+          }
+        },
+        "atlassian": {
+          "api": {
+            "confluence": {
+              "auth": {
+                "scheme": "basic"
+              },
+              "credential": [
+                {
+                  "token": "CONFLUENCE_API_TOKEN",
+                  "user": "CONFLUENCE_USERNAME"
+                },
+                {
+                  "token": "JIRA_API_TOKEN",
+                  "user": "JIRA_USERNAME"
+                }
+              ],
+              "request": "/wiki/rest/api/user/current",
+              "url": {
+                "env": [
+                  "CONFLUENCE_URL",
+                  "JIRA_URL"
+                ]
+              }
+            },
+            "jira": {
+              "auth": {
+                "scheme": "basic"
+              },
+              "credential": [
+                {
+                  "token": "JIRA_API_TOKEN",
+                  "user": "JIRA_USERNAME"
+                }
+              ],
+              "request": "/rest/api/3/myself",
+              "url": {
+                "env": [
+                  "JIRA_URL"
+                ]
+              }
+            }
+          }
+        },
+        "figma": {
+          "api": {
+            "figma": {
+              "auth": {
+                "header": "X-Figma-Token",
+                "scheme": "header"
+              },
+              "credential": [
+                "FIGMA_API_KEY"
+              ],
+              "request": "/v1/me",
+              "url": {
+                "default": "https://api.figma.com"
+              }
+            }
+          }
+        },
+        "github": {
+          "api": {
+            "github": {
+              "auth": {
+                "scheme": "bearer"
+              },
+              "credential": [
+                "GH_TOKEN",
+                "GITHUB_TOKEN",
+                "GITHUB_PERSONAL_ACCESS_TOKEN"
+              ],
+              "request": "/user",
+              "url": {
+                "env": [
+                  "GITHUB_API_URL"
+                ]
+              }
+            }
+          }
+        },
+        "gitlab": {
+          "api": {
+            "gitlab": {
+              "auth": {
+                "header": "PRIVATE-TOKEN",
+                "scheme": "header"
+              },
+              "credential": [
+                "GITLAB_TOKEN",
+                "GITLAB_ACCESS_TOKEN",
+                "GITLAB_PERSONAL_ACCESS_TOKEN"
+              ],
+              "request": "/api/v4/user",
+              "url": {
+                "env": [
+                  "GITLAB_HOST",
+                  "GITLAB_URI",
+                  "GL_HOST",
+                  "CI_SERVER_URL",
+                  "GITLAB_API_URL"
+                ]
+              }
+            }
+          }
+        },
+        "launchdarkly": {
+          "api": {
+            "launchdarkly": {
+              "auth": {
+                "header": "Authorization",
+                "scheme": "header"
+              },
+              "credential": [
+                "LD_ACCESS_TOKEN",
+                "LAUNCHDARKLY_ACCESS_TOKEN"
+              ],
+              "request": "/api/v2/caller-identity",
+              "url": {
+                "env": [
+                  "LD_BASE_URI"
+                ]
+              }
+            }
+          }
+        },
         "locked": false
       }
     },
@@ -1680,7 +1827,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.428.0"
+      "resolvedVersion": "0.438.0"
     }
   ],
   "component": {
@@ -1697,7 +1844,7 @@
       }
     }
   },
-  "ecorn": "0.428.0",
+  "ecorn": "0.438.0",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
