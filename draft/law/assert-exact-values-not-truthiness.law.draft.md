@@ -22,7 +22,7 @@
 ## Enforcement
 
 - `@knix-law/assert-exact-values-not-truthiness-restricted-syntax`, the plugin's copy of core `no-restricted-syntax`, at `error`:
-  - **Test files:** in a `files` override for test files, four selectors:
+  - **Test files:** in a `files` override for [test files](README.md#test-files), four selectors:
     - `CallExpression[callee.property.name=/^(toBeTruthy|toBeFalsy)$/]`, for Jest, Vitest and Jasmine, `.not.` included;
     - `MemberExpression[property.name='ok']:has(CallExpression.object[callee.name='expect'])`, for Chai's `expect(…).to.be.ok` and `to.not.be.ok`;
     - `CallExpression[callee.property.name=/^(should|and)$/][arguments.0.value=/^(not\.)?be\.ok$/]`, for Cypress `should('be.ok')` and `should('not.be.ok')`;

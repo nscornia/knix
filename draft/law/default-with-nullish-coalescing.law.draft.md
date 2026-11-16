@@ -23,3 +23,4 @@
 
 - [Build versus buy, in order](build-vs-buy-order.law.draft.md) shows how swapping `|| fallback` for a library default changes behaviour.
 - [Explain every disable](explain-every-disable.law.draft.md) governs the disable comment that keeps a deliberate `||`.
+- [Test for a missing value with `== null`](test-for-missing-with-loose-null.law.draft.md) tests for the same two values `??` matches.

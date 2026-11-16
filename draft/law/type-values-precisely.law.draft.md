@@ -8,7 +8,7 @@ Every value carries a type the compiler checks.
 - Type an `any` a library returns as `unknown` where it enters the code, then validate it.
 - Test for `null` or `undefined` only where the type allows it. A value typed non-nullable takes no defensive check. Data from outside the program (an HTTP response, parsed JSON, storage, a third-party callback) is validated once where it enters, then trusted by its type. A value its type can't vouch for, because nothing validated it or it can still be `null` or `undefined` at runtime, is typed to include them (`T | null | undefined`) wherever it passes, so the check it needs is one the type allows.
 - Exported signatures carry no `any`.
-- **Test files** get no relaxation.
+- **[Test files](README.md#test-files)** get no relaxation.
   - Test doubles are typed as the **Test files** rule of [Assert only what the checker cannot know](assert-only-what-the-checker-cannot-know.law.draft.md#rule) requires.
   - A matcher that returns `any` is library `any`, typed `unknown` at the boundary like any other library `any`.
 
@@ -63,6 +63,8 @@ Every value carries a type the compiler checks.
 
 - [Explain every disable](explain-every-disable.law.draft.md) owns the checks that each disable under Exceptions and Narrowings names its rules and says why.
 - [Assert only what the checker cannot know](assert-only-what-the-checker-cannot-know.law.draft.md) owns `strict: true`, which keeps `null` and `undefined` out of a type that doesn't name them.
+- [Unwrap responses where they are fetched](unwrap-responses-where-they-are-fetched.law.draft.md) reshapes a response once, in the method that fetches it.
+- [Test for a missing value with `== null`](test-for-missing-with-loose-null.law.draft.md) says how to spell a test for `null` or `undefined`.
 
 [ts-dos]: https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
 [no-explicit-any]: https://typescript-eslint.io/rules/no-explicit-any/

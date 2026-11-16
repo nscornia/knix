@@ -17,3 +17,4 @@
 ## Related
 
 - [Only the owner writes](only-the-owner-writes.law.draft.md) builds the observable a template reads as a field once, so `async` keeps one subscription.
+- [End every subscription you make](end-every-subscription-you-make.law.draft.md) governs a subscription made by hand, outside `async`.

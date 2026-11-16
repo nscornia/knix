@@ -49,3 +49,16 @@ Laws under review. None is approved until every draft has been walked and the re
 | [Read each observable once per template](read-each-observable-once-per-template.law.draft.md) | Read an observable through `async` once per template; bind it with `@let` or `@if (…; as x)` and reuse the name. |
 | [Name the public surface for its users](name-public-surface-for-its-users.law.draft.md) | Name public tokens, inputs, outputs and configuration keys for what they mean to users, not how they're built. |
 | [Publish only the tokens consumers use](publish-only-the-tokens-consumers-use.law.draft.md) | Publish the tokens consumers style with; a token only the design system's own components use stays unpublished. |
+| [Unwrap responses where they are fetched](unwrap-responses-where-they-are-fetched.law.draft.md) | A fetching method unwraps and reshapes the response once and returns what callers use. |
+| [End every subscription you make](end-every-subscription-you-make.law.draft.md) | End every hand-made subscription: with its owner for a read or stream, `take(1)` for a one-shot that must finish. |
+| [Test for a missing value with `== null`](test-for-missing-with-loose-null.law.draft.md) | Test for a missing value with `== null`; compare with just `null` or just `undefined` only when the code means that one. |
+| [Call backends through the gateway](call-backends-through-the-gateway.law.draft.md) | Call a backend only through the API gateway, never an internal service's own host. |
+
+## Test files
+
+These patterns cover the default test files of Vitest, Jest, Playwright, Angular, Cypress, Node's test runner and Mocha. A file is a test file when its path matches one of them:
+
+- `**/*.{spec,test}.?(c|m)[jt]s?(x)`
+- `**/*{-,_}test.?(c|m)[jt]s?(x)`, `**/test-*.?(c|m)[jt]s?(x)` and `**/test.?(c|m)[jt]s?(x)`
+- `**/{__tests__,test}/**`
+- `**/*.cy.?(c|m)[jt]s?(x)`

@@ -8,6 +8,7 @@ A name says what the value represents.
 - A single letter is allowed only where the letter is itself the convention: `i`/`j`/`k` loop indices, `x`/`y`/`z` coordinates, `a`/`b` in a comparator, and single upper-case type parameters.
 - Everything else gets a word, however short its scope, callback parameters included (e.g. `events.map((event) => event.id)`, not `(e) => e.id`).
 - Give a number a name when the code around it doesn't show what it means: a constant named for what it is (`MAX_RETRIES = 3`), or an existing named value (`HttpStatusCode.NotFound`). A number whose meaning is plain where it sits, such as a unit conversion (`* 1000` for seconds to milliseconds) or the arithmetic in a named constant's own value, stays a literal.
+- Start every type's name with an upper-case letter: a class, interface, type alias or enum is `CaseSummary`, never `caseSummary`, so it never reads like a value. A leading `_` may come first, marking the type outside the public API as it does on a member.
 - **Unused values:**
   - Leave an unused value unbound where the language allows: omit the catch binding (`catch {}`), elide array elements (`[, second]`), drop trailing parameters, and rely on rest siblings (`const { id, ...rest } = obj`).
   - Where a binding is required, name it `_`, or `_` plus a descriptive name (`(_row, _column, value)`).
@@ -60,9 +61,12 @@ Readers find defects faster in code whose names are words than in code whose nam
 - ESLint [`id-length`][id-length] at `error`: `{ min: 2, properties: 'never', exceptions: ['i','j','k','x','y','z','a','b','_'] }`.
   - It is off in ESLint's `recommended`, so it is enabled explicitly.
   - It flags `catch (e)` but never checks type parameters.
-- typescript-eslint [`@typescript-eslint/naming-convention`][naming-convention] at `error`, on the `typeParameter` selector only, allowing one upper-case letter or `UpperCamelCase`.
-  - `{ selector: 'typeParameter', format: null, custom: { regex: '^(?:[A-Z]|[A-Z][A-Za-z0-9]+)$', match: true } }`.
-  - It misses an `infer` type parameter and a mapped-type key (probed).
+- typescript-eslint [`@typescript-eslint/naming-convention`][naming-convention] at `error`, in one setting holding both selectors below. A later setting for the rule replaces an earlier one's options (probed).
+  - **Type parameters:** one upper-case letter or `UpperCamelCase`.
+    - `{ selector: 'typeParameter', format: null, custom: { regex: '^(?:[A-Z]|[A-Z][A-Za-z0-9]+)$', match: true } }`.
+    - It misses an `infer` type parameter and a mapped-type key (probed).
+  - **Classes, interfaces, type aliases and enums:** an upper-case first letter, after any leading `_`.
+    - `{ selector: ['class', 'interface', 'typeAlias', 'enum'], format: null, custom: { regex: '^_*[A-Z]', match: true } }`.
 - typescript-eslint [`@typescript-eslint/no-unused-vars`][tse-no-unused-vars] at `error` with `{ args: 'all', argsIgnorePattern: '^_', caughtErrors: 'all', caughtErrorsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_', ignoreRestSiblings: true, reportUsedIgnorePattern: true }`.
   - This is typescript-eslint's emulation of TypeScript's `_` exemption, without `varsIgnorePattern`.
   - [`reportUsedIgnorePattern`][eslint-report-used] reports a `_`-prefixed parameter, caught error or array element that is read.

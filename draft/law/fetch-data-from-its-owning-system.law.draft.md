@@ -18,3 +18,5 @@
 
 - [Place with the owner](place-with-owner.law.draft.md) governs where code and resources live; this law applies it to data the code owns.
 - [Derive declaratively](derive-declaratively.law.draft.md) forbids a copy that code syncs by hand; this law applies that to data another system owns.
+- [Unwrap responses where they are fetched](unwrap-responses-where-they-are-fetched.law.draft.md) governs what the fetching method returns.
+- [Call backends through the gateway](call-backends-through-the-gateway.law.draft.md) governs the route a request takes to the owning system.

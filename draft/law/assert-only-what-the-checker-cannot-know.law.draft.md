@@ -111,7 +111,7 @@ A type assertion is a claim the compiler takes on trust and the runtime never ch
   - A definite variable (`let late!: string`): `VariableDeclarator[definite=true]`.
   - A `declare` field (`declare value: string`): `PropertyDefinition[declare=true]`.
     - A needed one takes a described disable: `// eslint-disable-next-line @knix-law/assert-only-what-the-checker-cannot-know-restricted-syntax -- <why it is safe>`.
-- **Test files:**
+- **[Test files](README.md#test-files):**
   - `@typescript-eslint/no-unsafe-type-assertion` is off, so a typed stub is asserted to `T` once without a disable.
   - The law's restricted-syntax rule adds two selectors for a double assertion through any type:
     - `TSAsExpression > TSAsExpression.expression`.
