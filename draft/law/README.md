@@ -48,3 +48,4 @@ Laws under review. None is approved until every draft has been walked and the re
 | [List dependencies by what uses them](list-dependencies-by-what-uses-them.law.draft.md) | `devDependencies` for packages only tests, tooling or builds use; shipped code never imports a test package. |
 | [Read each observable once per template](read-each-observable-once-per-template.law.draft.md) | Read an observable through `async` once per template; bind it with `@let` or `@if (…; as x)` and reuse the name. |
 | [Name the public surface for its users](name-public-surface-for-its-users.law.draft.md) | Name public tokens, inputs, outputs and configuration keys for what they mean to users, not how they're built. |
+| [Publish only the tokens consumers use](publish-only-the-tokens-consumers-use.law.draft.md) | Publish the tokens consumers style with; a token only the design system's own components use stays unpublished. |

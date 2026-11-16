@@ -81,6 +81,7 @@
 
 - [Explain every disable](explain-every-disable.law.draft.md) owns the checks on a disable that keeps a deprecated use.
 - [Own your public types](own-your-public-types.law.draft.md) decides what a library publishes.
+- [Publish only the tokens consumers use](publish-only-the-tokens-consumers-use.law.draft.md) decides which tokens a design system publishes.
 
 [ng-deprecation-period]: https://github.com/angular/angular/blob/38afab7a24488c568e28ef969e8c615551b0e375/adev/src/content/reference/releases.md?plain=1#L116
 [ng-update-path]: https://github.com/angular/angular/blob/38afab7a24488c568e28ef969e8c615551b0e375/adev/src/content/reference/releases.md?plain=1#L122

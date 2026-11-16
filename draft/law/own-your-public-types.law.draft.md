@@ -14,3 +14,7 @@ A public API exposes types the library owns, never a dependency's types by accid
 ## Why
 
 Hyrum's Law: with enough consumers, every observable behaviour of an API is depended on. A leaked dependency type turns that dependency's changes into your breaking changes.
+
+## Related
+
+- [Publish only the tokens consumers use](publish-only-the-tokens-consumers-use.law.draft.md) keeps a design system's published tokens narrow in the same way.

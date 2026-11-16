@@ -6,6 +6,7 @@ Code and resources live with the unit that owns them, and move up only when they
 
 - Place code and resources with their owner.
 - When two or more owners share something, hoist it to their nearest common owner.
+- Code that only one product uses lives in that product's repository, even when it runs inside shared code; the shared code offers an extension point, such as a route, a federated remote or an injection token, and the product plugs its code into it.
 - **Defaults:** Give a shared default one definition, at the outermost scope that shares it, and reference it from there; a narrower scope states only a value that differs. Equal literals are one default only when they mean the same setting; values equal by coincidence stay separate.
 - Pass shared code down explicitly. If middle layers only forward it, extract them and pass content as children instead.
 - Use the framework's injection (context, provide/inject, a DI provider) only when many distant consumers need it.
@@ -49,6 +50,7 @@ Code that lives with its owner is found, changed and removed together with that 
 
 - **Angular:**
   - Move a service up once a sibling feature imports it.
+  - Never list a service that is already provided at the root in a component's or route's `providers`; that makes a second instance for the subtree and splits any state the service holds. Provide it again only to give each view its own instance or to substitute a test double.
   - Hoist a shared component style to a stylesheet both components import, not into the parent's styles.
     - A component's styles "only apply to elements defined in that component's template" ([Angular, component styling][ng-styling]).
 - **Terraform:** shared infrastructure goes in the common parent module and is passed down as inputs.
@@ -64,6 +66,7 @@ Code that lives with its owner is found, changed and removed together with that 
 - Simpler alternative: `import-x/no-restricted-paths` with path zones, needing no element configuration ([rule docs][no-restricted-paths]).
   - It needs `createNodeResolver()` in `import-x/resolver-next`. Without a resolver, nothing is reported.
 - Explicit passing and provider scope: review only. No lint rule detects forward-only layers or an over-broad provider.
+- **Product code in shared code:** review only.
 - **Defaults:** review only.
   - Equal literals don't show whether they mean the same setting, so no lint rule can tell a repeated default from a coincidence.
 

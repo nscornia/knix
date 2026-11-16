@@ -40,6 +40,7 @@ A dependency's internal DOM and class names aren't part of its public API, so it
 - [Use the design system](use-the-design-system.law.draft.md) governs when to use the design system's components.
 - [Use design tokens for style values](use-design-tokens-for-style-values.law.draft.md) governs the values a style takes.
 - [Name the public surface for its users](name-public-surface-for-its-users.law.draft.md) names every public token, input, output and configuration key in its users' terms.
+- [Publish only the tokens consumers use](publish-only-the-tokens-consumers-use.law.draft.md) is the publisher's side: which tokens a design system publishes.
 
 [material-theming]: https://github.com/angular/components/blob/2163de0fe01658260e0e40668574abf10181b999/guides/theming.md
 [semver]: https://semver.org/
