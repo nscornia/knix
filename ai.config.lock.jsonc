@@ -430,7 +430,7 @@
           "stale_delta_fraction": 0.2,
           "sweep_days": 30,
           "target_tokens": 4000,
-          "threshold_tokens": 200000,
+          "threshold_tokens": 150000,
           "watch": true,
           "watch_deadline_minutes": 5
         },
@@ -1827,7 +1827,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.438.0"
+      "resolvedVersion": "0.443.0"
     }
   ],
   "component": {
@@ -1844,7 +1844,7 @@
       }
     }
   },
-  "ecorn": "0.438.0",
+  "ecorn": "0.443.0",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
