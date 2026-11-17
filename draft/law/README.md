@@ -53,6 +53,7 @@ Laws under review. None is approved until every draft has been walked and the re
 | [End every subscription you make](end-every-subscription-you-make.law.draft.md) | End every hand-made subscription: with its owner for a read or stream, `take(1)` for a one-shot that must finish. |
 | [Test for a missing value with `== null`](test-for-missing-with-loose-null.law.draft.md) | Test for a missing value with `== null`; compare with just `null` or just `undefined` only when the code means that one. |
 | [Call backends through the gateway](call-backends-through-the-gateway.law.draft.md) | Call a backend only through the API gateway, never an internal service's own host. |
+| [Keep business logic out of templates](keep-business-logic-out-of-templates.law.draft.md) | A rule over domain state, a status value or a permission moves out of the template; an event binding calls the owner's operation. |
 
 ## Test files
 
