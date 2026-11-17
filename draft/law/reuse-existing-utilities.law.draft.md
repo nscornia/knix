@@ -11,6 +11,7 @@ Reach for the designated utility before writing your own.
 - **Optional fields:** Build an object with optional fields by assigning each field, then remove absent entries in one call to the designated helper, picking the helper whose definition of empty matches the fields.
 - **Type aliases:** Where the codebase designates a type alias for a type form, write the alias, never the spelled-out form.
   - Replace a form only where the alias resolves to the same type there.
+- **[Test files](README.md#test-files):** A fixture repeated across test cases comes from one factory function that returns a new object per call, or the cases run as a parameterized table.
 
 ## Examples
 
@@ -93,7 +94,7 @@ Cross-cutting concerns such as dates, URLs and empty values carry requirements t
   - A call through a local alias (`const enc = encodeURI; enc(s)`) is reported only at the assignment.
   - A global object reached through a variable (`const g = globalThis; g.encodeURI(s)`) is not reported.
   - A renamed or reimplemented duplicate is not reported.
-- Review checks for parallel implementations the lists do not name.
+- Review checks for parallel implementations the lists do not name, and for a fixture repeated across test cases.
 
 ## Related
 
