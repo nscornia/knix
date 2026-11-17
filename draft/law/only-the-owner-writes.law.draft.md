@@ -56,7 +56,7 @@ A read-only view does not stop mutation of an object value it holds. Return immu
   - member writes;
   - in-place array methods;
   - known mutator functions.
-- **RxJS:** `rxjs-x/no-exposed-subjects` with `allowProtected: false` ([rule docs][no-exposed-subjects]).
+- **RxJS:** `rxjs-x/no-exposed-subjects` at `error`, with `allowProtected: false` ([rule docs][no-exposed-subjects]).
   - It misses module-scope and object-literal exposure, which stays review-only.
 - **Angular signals:** review only.
 - **Unneeded copies:** review only.

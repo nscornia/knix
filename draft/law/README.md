@@ -62,3 +62,12 @@ These patterns cover the default test files of Vitest, Jest, Playwright, Angular
 - `**/*{-,_}test.?(c|m)[jt]s?(x)`, `**/test-*.?(c|m)[jt]s?(x)` and `**/test.?(c|m)[jt]s?(x)`
 - `**/{__tests__,test}/**`
 - `**/*.cy.?(c|m)[jt]s?(x)`
+
+## Test support
+
+Test support is the shared code test files import or their runner loads: stub factories, mock modules, support commands, page objects, harnesses and fixtures. It is not a test file and keeps the rules for production code. A file is test support when its path matches one of these patterns, which follow Cypress's support folder and Jest's and Vitest's manual mocks, or a pattern its repository sets:
+
+- `**/cypress/support/**`
+- `**/__mocks__/**`
+
+A path that matches both sections is test support: each law's test-file override excludes the test-support patterns.

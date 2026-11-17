@@ -72,7 +72,7 @@
 - **Shared automation code:** two typed rules at `error`, whose checks were probed as one prototype rule. <!-- TODO: the two rule IDs, pending a ruling. -->
   - Both act only on calls whose signature a listed API declares, so `Map.get` is not reported.
     - Listed APIs: Playwright, Cypress, Testing Library, the DOM, Angular's `By.css` and a CDK harness's `locatorFor`.
-  - **Shared automation pattern:** a `files` pattern each repository sets, such as page objects, support commands, harnesses and fixtures.
+  - **Shared automation pattern:** the [test support](README.md#test-support) patterns.
   - **Selector rule,** enabled on test files and the shared automation pattern:
     - Option: `{ testIdAttribute: '<attribute>' }`, one attribute, default `data-testid`, set to the value the repository's test runner uses.
     - Reported: a selector argument whose type doesn't prove one selector on that attribute, such as `[data-testid="save"]`, or a Cypress `@alias`.
