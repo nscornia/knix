@@ -67,6 +67,9 @@
         "coverage-epistemics": {
           "tier": "reference"
         },
+        "datadog-recipe": {
+          "tier": "reference"
+        },
         "delegation": {
           "tier": "reference"
         },
@@ -1116,6 +1119,23 @@
             }
           }
         },
+        "datadog": {
+          "api": {
+            "datadog": {
+              "auth": {
+                "header": "DD-API-KEY",
+                "scheme": "header"
+              },
+              "credential": [
+                "DD_API_KEY"
+              ],
+              "request": "/api/v1/validate",
+              "url": {
+                "default": "https://api.datadoghq.com"
+              }
+            }
+          }
+        },
         "figma": {
           "api": {
             "figma": {
@@ -1827,7 +1847,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.443.0"
+      "resolvedVersion": "0.445.0"
     }
   ],
   "component": {
@@ -1844,7 +1864,7 @@
       }
     }
   },
-  "ecorn": "0.443.0",
+  "ecorn": "0.445.0",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
