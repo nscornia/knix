@@ -6,7 +6,7 @@ kind: "enhancement"
 cycle: "e1bbab25-346"
 provenance: "prompted"
 created: "2026-11-17T16:00:07Z"
-modified: "2026-11-17T16:00:07Z"
+modified: "2026-11-19T03:14:50Z"
 ---
 # Prove the public npm publishing process
 
@@ -20,3 +20,5 @@ modified: "2026-11-17T16:00:07Z"
 - Provenance: generated only from a public repository, and `repository.url` must match the GitHub repository exactly ([npm trusted publishers](https://docs.npmjs.com/trusted-publishers)).
 - Open: whether `changesets/action` v2 or a plain `changeset publish` step publishes through OIDC. Reported pitfall: `actions/setup-node` with `registry-url` writes a token `.npmrc` that overrides OIDC.
 - Open: whether a first publish under a non-`latest` dist-tag still becomes `latest`.
+
+Blocked by [[utils-log-entry-point]]
