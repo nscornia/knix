@@ -1578,7 +1578,7 @@
               "balanced": "claude-sonnet-5.5",
               "deep": "claude-opus-5.5",
               "fast": "claude-haiku-5.5",
-              "frontier": "claude-fable-5.1"
+              "frontier": "claude-fable-5.2"
             }
           }
         },
@@ -1859,7 +1859,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.451.0"
+      "resolvedVersion": "0.452.0"
     }
   ],
   "component": {
@@ -1876,7 +1876,7 @@
       }
     }
   },
-  "ecorn": "0.451.0",
+  "ecorn": "0.452.0",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
