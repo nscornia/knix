@@ -459,3 +459,9 @@ Every ruling the operator has made on knix, in the order they were made, with wh
 - **Supersedes:** the `FORCE_COLOR` clause of When Node badges get colour ("`0` or `false` turns colour off, any other value turns it on").
 - **Ruling:** the logger reads `FORCE_COLOR` exactly as Node 26.8.1 does. An empty value, `1`, `true`, `2` or `3` turns colour on; `0`, `false` or any other value turns it off. The rest of When Node badges get colour stands.
 - **Written at:** not yet.
+
+### 2026-11-20 — @knix/utils drops private with the logger
+
+- **Ruled:** operator, on my Question 64's version default: "\"private\" or not doesn't matter to me, you can make it pulic and puslish it under 0.x.x".
+- **Ruling:** the logger slice removes `private: true` from `@knix/utils`, because the package then holds a real utility rather than an empty placeholder. `main` keeps `0.0.0`, and the first publish stays the `0.0.1` that First release version rules, inside the 0.x.x range the version ceiling enforces.
+- **Written at:** not yet.

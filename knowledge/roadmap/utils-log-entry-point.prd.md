@@ -4,7 +4,7 @@
 
 ## Context
 
-`@knix/utils` 0.0.1 ships one small real utility as the first release of the npm publishing proof ([decision log](../decision-log.md), "The 0.0.1 utility"). The operator chose a development logger, modelled on one they already use and written fresh. Every design point below was ruled one question at a time and is recorded in the decision log, from "Logger requirements" through "How the logger reads FORCE_COLOR". This PRD cites each entry by its title.
+`@knix/utils` 0.0.1 ships one small real utility as the first release of the npm publishing proof ([decision log](../decision-log.md), "The 0.0.1 utility"). The operator chose a development logger, modelled on one they already use and written fresh. Every design point below was ruled one question at a time and is recorded in the decision log, from "Logger requirements" through "@knix/utils drops private with the logger". This PRD cites each entry by its title.
 
 The repo has no code under `packages/utils` yet: only a `private: true`, `0.0.0` manifest. Nothing in the repo has a test runner, a TypeScript setup, a tsconfig or a `.github/` directory. This slice therefore also sets the build, test and CI pattern that later `@knix/*` entry points inherit.
 
@@ -88,8 +88,8 @@ The logger is development-only ("Logger is development-only"): it exists to debu
 
 Surfaced at the handoff for the operator's approval:
 
-- **Version:** `@knix/utils` stays `private: true` at `0.0.0`.
-  - `npm-publishing-poc` flips it and adds the changeset.
+- **Version** (ruled since: "@knix/utils drops private with the logger"): this slice removes `private: true`; `main` keeps `0.0.0`.
+  - `npm-publishing-poc` adds the changeset that publishes `0.0.1`.
 - **Build:** plain `tsc`, with `typescript` pinned at exact `6.0.3`.
   - This follows the "Tool versions" ruling's "typescript is 6.x.x".
   - One emitted `.js` and `.d.ts` per entry. No bundler, no runtime dependencies, no `any`.
@@ -210,7 +210,7 @@ Probes and source reads from 2026-11-17 to 2026-11-19, each tagged by how it was
 - [ ] `packages/utils/package.json` declares the package shape:
   - `exports` for exactly `./log` and `./log/global`, with types and import conditions.
   - `sideEffects` listing only the built global entry.
-  - `private: true`, version `0.0.0`, no `dependencies`, and an exact `typescript` `6.0.3` dev pin.
+  - no `private` field, version `0.0.0`, no `dependencies`, and an exact `typescript` `6.0.3` dev pin.
 - [ ] `npm run build -w @knix/utils` exits 0 and emits one `.js` and one `.d.ts` per entry with plain `tsc`.
 - [ ] The source contains no `any`.
 
