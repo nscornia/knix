@@ -403,6 +403,7 @@ Every ruling the operator has made on knix, in the order they were made, with wh
 - **Ruled:** operator, my Question 54 A.
 - **Supersedes:** the detection clause of Logger badge colour in Node ("is a terminal, unless `NO_COLOR` is set").
 - **Ruling:** Node badges follow Node's own colour rule. `FORCE_COLOR` decides first: `0` or `false` turns colour off, any other value turns it on. Otherwise a terminal stream decides through `stream.hasColors()`, which honours `NO_COLOR` and `TERM=dumb`; a non-terminal stream prints plain. Vitest workers write to a pipe, so the README states that Vitest needs `FORCE_COLOR=1` for colour.
+- **Superseded by:** How the logger reads FORCE_COLOR (the `FORCE_COLOR` clause only).
 - **Written at:** not yet.
 
 ### 2026-11-18 — Logger badge palette
@@ -432,3 +433,29 @@ Every ruling the operator has made on knix, in the order they were made, with wh
 - **Supersedes:** my Question 90 A's pre-push report to the managing session (the former Standing direction bullet "Before each push").
 - **Ruling:** knix has no managing session. The operator's approval in the working session is the only gate, the PRD gate included. Research runs through the working session's own subagent, with findings tagged VERIFIED, INFERRED or UNVERIFIED. Before each push, the confirmation shows the operator the `origin/main..HEAD` range plus the results of `ecorn validate -p .` and `npm run check:law-links`.
 - **Written at:** this file, Standing direction.
+
+### 2026-11-18 — Logger return value and empty-value display
+
+- **Ruled:** operator, my Question 59 A.
+- **Ruling:** `log.log`, `log.warn`, `log.error` and the badges stay bound console methods, so their DevTools link points at the caller. One wrapper method, `log.tap(value, ...rest)`, logs with the prefix, shows `''` and the strings `'null'` and `'undefined'` readably, and returns `value` so it can sit inside an expression.
+  - **`tap`'s link:** points at the caller where the bundler ignore-lists dependencies and the browser honours it (Chrome under Vite, Rollup, the Angular esbuild builder, Next). It points at knix in Firefox, in Safari under Vite, in webpack without an ignore-list plugin, and wherever ignore-listing is off. Its docs say so.
+- **Written at:** not yet.
+
+### 2026-11-18 — Leading underscore in logger class names
+
+- **Ruled:** operator, my Question 60 A.
+- **Ruling:** the logger strips one leading `_` from a class name it reads itself, from a class, an instance or the stack, because an Angular development build names classes `_CartService`. A string passed to `log.scope('…')` prints exactly as written.
+- **Written at:** not yet.
+
+### 2026-11-20 — Logger test runner
+
+- **Ruled:** operator, my Question 61 A.
+- **Ruling:** Vitest 5.1.1 with two projects. A Node project covers the colour rule and Node naming. A browser project runs `@vitest/browser-playwright` 5.1.1 in Chromium, Firefox and WebKit, so each stack parser meets its own engine's real stacks. CI installs and caches the three Playwright browsers. Colour tests pass a stream in rather than reading `process.stdout`, because Vitest workers write to a pipe.
+- **Written at:** not yet.
+
+### 2026-11-20 — How the logger reads FORCE_COLOR
+
+- **Ruled:** operator, my Question 62 A.
+- **Supersedes:** the `FORCE_COLOR` clause of When Node badges get colour ("`0` or `false` turns colour off, any other value turns it on").
+- **Ruling:** the logger reads `FORCE_COLOR` exactly as Node 26.8.1 does. An empty value, `1`, `true`, `2` or `3` turns colour on; `0`, `false` or any other value turns it off. The rest of When Node badges get colour stands.
+- **Written at:** not yet.
