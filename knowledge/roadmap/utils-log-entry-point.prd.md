@@ -82,6 +82,10 @@ The logger is development-only ("Logger is development-only"): it exists to debu
 - **Runner** ("Logger test runner"): Vitest 5.1.1, with a Node project and a browser project.
 - **Browser project:** `@vitest/browser-playwright` 5.1.1 in Chromium, Firefox and WebKit.
   - So each stack parser meets its engine's real stacks.
+- **Where each runs** ("Where knix's tests run"):
+  - **Root `test`:** the build and the Node project, which the pre-commit gate runs on code commits.
+  - **Root `test:browser`:** the three browser instances, in CI and at each code task's checkpoint.
+  - **Docs-only commits:** the gate's docs scope runs `check:law-links` instead.
 - **Colour tests** pass a stream in, rather than reading `process.stdout`.
 
 ### Defaults taken here, not ruled
@@ -95,7 +99,7 @@ Surfaced at the handoff for the operator's approval:
   - One emitted `.js` and `.d.ts` per entry. No bundler, no runtime dependencies, no `any`.
 - **CI:** this slice adds the repo's first workflow, `.github/workflows/ci.yml`.
   - **Pinning:** every action pinned to a full SHA, which the repository settings require.
-  - **Jobs:** typecheck, build and both test projects, with the Playwright browsers cached.
+  - **Jobs:** typecheck, build and both test projects, installing the Playwright browsers each run with no cache (decision log "Where knix's tests run").
   - **Consumer builds:** a Vite production build importing only `@knix/utils/log` carries no global installer.
     - A `DEV`-guarded import of the global is absent from production output.
 - **Scoped object:** `log.scope(owner)` returns an object with the same methods as `log`, `scope` aside.
@@ -246,8 +250,11 @@ Probes and source reads from 2026-11-17 to 2026-11-19, each tagged by how it was
 
 - [ ] `.github/workflows/ci.yml` runs on push and pull request to `main`:
   - Every action pinned to a full SHA.
-  - Playwright browsers cached.
+  - Playwright browsers installed each run, with no cache.
   - Typecheck, build and both Vitest projects run.
+- [ ] Tests run where "Where knix's tests run" puts them:
+  - Root `test` runs the build and the Node project; root `test:browser` runs the three browser instances.
+  - A docs-only commit runs `check:law-links` through the test gate's docs scope, and skips typecheck.
 - [ ] The CI consumer builds pass:
   - A Vite production build importing only `@knix/utils/log` contains no global installer code.
   - A production build with a `DEV`-guarded global import contains no `@knix/utils/log` string.
