@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p test/types/tsconfig.json --noEmit",
     "test": "npm run build && vitest run --project node",
     "test:browser": "vitest run --project browser"
   },

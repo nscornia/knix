@@ -107,6 +107,12 @@ function methods(label: string): ScopedLogger {
   };
 }
 
+/** Equals `version` in `package.json`; a test keeps the two in step. */
+export const version = '0.0.0';
+
+/** The key under which `log` carries its package version. */
+export const versionKey = Symbol.for('@knix/utils/log');
+
 function createLogger(): Logger {
   const logger = Object.defineProperties(
     {},
@@ -119,6 +125,7 @@ function createLogger(): Logger {
       },
     },
   ) as Logger;
+  Object.defineProperty(logger, versionKey, { value: version });
   return Object.freeze(logger);
 }
 
