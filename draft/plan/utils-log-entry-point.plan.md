@@ -13,6 +13,8 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
 
 **Amended:** 2026-11-21 by my Question 71 A (decision log "How the caller prefix is printed"): the levels and `tap` print `[name]`; badges colour ` name `; Tasks 2 and 3 test both forms.
 
+**Amended:** 2026-11-21 by my Question 72 A (decision log "Badges when Node prints without colour"): a plain Node badge prints the levels' `[name]`; Task 3 tests it.
+
 ## Starting position
 
 - **Empty package:** `packages/utils/` holds only `package.json`.
@@ -81,6 +83,7 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
      - **First:** the logger reads `FORCE_COLOR` itself. Empty, `1`, `true`, `2` and `3` are on; anything else is off.
      - **Only when it is unset:** the stream's `hasColors()` decides, stdout for `log.log` and badges, stderr for `warn` and `error`.
      - **A stream without `hasColors`** prints plain.
+     - **Plain badges** print the levels' `[name]`, or no prefix with no name.
    - **Tests:**
      - **Colour rule** (node project): pass a stream and an environment in, covering each `FORCE_COLOR` value, `hasColors()` true and false, and a non-terminal stream.
      - **Badges bound** (shared): each badge is a getter, and a `console` spy's captured stack holds no knix frame.

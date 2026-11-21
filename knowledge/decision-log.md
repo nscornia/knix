@@ -496,3 +496,9 @@ Every ruling the operator has made on knix, in the order they were made, with wh
   - **Badges** colour the same text with one space each side and no brackets: ` CartService.add `.
   - **No name:** the levels and `tap` print no prefix, and a badge prints a short blank coloured block.
 - **Written at:** `knowledge/roadmap/utils-log-entry-point.prd.md`.
+
+### 2026-11-21 — Badges when Node prints without colour
+
+- **Ruled:** operator, my Question 72 A: "Q72-A".
+- **Ruling:** when Node's colour rule turns colour off, a badge prints what the levels print: `log.red('x')` gives `[CartService.add] x`, and no prefix when there is no name. Browsers always colour badges.
+- **Written at:** `knowledge/roadmap/utils-log-entry-point.prd.md`.

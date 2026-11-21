@@ -60,6 +60,7 @@ The logger is development-only ("Logger is development-only"): it exists to debu
     - **`0`, `false` or any other value** turns it off.
     - **Otherwise the stream's `hasColors()` decides:** stdout for `log.log` and badges, stderr for `log.warn` and `log.error`.
     - **A stream that is not a terminal** prints plain.
+    - **Plain badges** ("Badges when Node prints without colour") print the levels' `[name]`, or no prefix when there is no name.
   - **Code:** one file, with no `node:util` import. Palette values are written fresh.
 
 ### Global install and setup
@@ -242,6 +243,7 @@ Probes and source reads from 2026-11-17 to 2026-11-19, each tagged by how it was
 - [ ] Colour tests pass a stream in and cover:
   - `FORCE_COLOR` empty, `1`, `true`, `2` and `3` on; `0`, `false` and an unrecognised value off.
   - `hasColors()` true and false, and a non-terminal stream plain.
+  - A plain Node badge printing `[name]`, or no prefix when there is no name.
   - Browser `%c` output.
 - [ ] A test asserts each badge's CSS pair has a contrast ratio of at least 4.5:1.
 
