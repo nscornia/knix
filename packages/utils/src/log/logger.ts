@@ -1,10 +1,12 @@
 import { callerPrefix } from './caller.js';
+import { badgeArgs } from './colour.js';
+import type { BadgeColour } from './colour.js';
 
 /** A bound console method: takes the same arguments as `console.log`. */
 export type LogMethod = (...data: unknown[]) => void;
 
-/** The level and tap methods shared by `log` and every scoped logger. */
-export interface ScopedLogger {
+/** The level, tap and badge members shared by `log` and every scoped logger. */
+export interface ScopedLogger extends Readonly<Record<BadgeColour, LogMethod>> {
   readonly log: LogMethod;
   readonly warn: LogMethod;
   readonly error: LogMethod;
@@ -68,6 +70,34 @@ function methods(label: string): ScopedLogger {
     get error(): LogMethod {
       const name = displayName(label, callerPrefix(2));
       return console.error.bind(console, ...prefixArgs(name));
+    },
+    get red(): LogMethod {
+      const name = displayName(label, callerPrefix(2));
+      return console.log.bind(console, ...badgeArgs('red', name, prefixArgs));
+    },
+    get yellow(): LogMethod {
+      const name = displayName(label, callerPrefix(2));
+      return console.log.bind(console, ...badgeArgs('yellow', name, prefixArgs));
+    },
+    get green(): LogMethod {
+      const name = displayName(label, callerPrefix(2));
+      return console.log.bind(console, ...badgeArgs('green', name, prefixArgs));
+    },
+    get cyan(): LogMethod {
+      const name = displayName(label, callerPrefix(2));
+      return console.log.bind(console, ...badgeArgs('cyan', name, prefixArgs));
+    },
+    get blue(): LogMethod {
+      const name = displayName(label, callerPrefix(2));
+      return console.log.bind(console, ...badgeArgs('blue', name, prefixArgs));
+    },
+    get magenta(): LogMethod {
+      const name = displayName(label, callerPrefix(2));
+      return console.log.bind(console, ...badgeArgs('magenta', name, prefixArgs));
+    },
+    get gray(): LogMethod {
+      const name = displayName(label, callerPrefix(2));
+      return console.log.bind(console, ...badgeArgs('gray', name, prefixArgs));
     },
     tap<T>(value: T, ...rest: unknown[]): T {
       const name = displayName(label, callerPrefix(2));
