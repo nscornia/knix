@@ -9,6 +9,8 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
 **Status:** Ready to execute
 **Verified:** 2026-11-21 — 12 cold checks folded (3 refuted and corrected, 2 inferred and settled by task steps); the fifth reconciliation audit returned HONORED.
 
+**Amended:** 2026-11-21 by my Question 70 A (decision log "Caller prefix is the same in every engine"): no class from the stack; the `_` strip moves to Task 2.
+
 ## Starting position
 
 - **Empty package:** `packages/utils/` holds only `package.json`.
@@ -42,8 +44,9 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
      - **Vitest,** per "Logger test runner": a node project (`*.test.ts`, `*.node.test.ts`) and a browser project (`*.test.ts`, `*.browser.test.ts`) in headless Chromium, Firefox and WebKit.
    - **Caller prefix module** (PRD "Caller prefix"):
      - **Reading:** V8 structured call sites through `Error.prepareStackTrace`, restored synchronously, and a string parser for the Safari and Firefox formats.
-     - **Walking and output:** past native frames only; one leading `_` stripped, never a file or line, no prefix for a short or empty stack.
-     - **Tests** (shared `*.test.ts`, all four engines): `Class.method`, a function's name, the `_` strip, no file or line in any prefix.
+     - **Walking:** past native frames only; no prefix for a short or empty stack.
+     - **Output:** the method or function name, the same in every engine; never a class, file or line.
+     - **Tests** (shared `*.test.ts`, all four engines): method and function names, one expected string each; no class, file or line in any prefix.
      - **Edge tests** (shared): a short or empty stack, and `Error.prepareStackTrace` restored.
    - Checkpoint: `npm run test:browser` reports all three browser instances and exits 0.
      - **Browser failure bites:** make one shared test fail once; `npm run test:browser` exits non-zero; revert it.
@@ -60,7 +63,8 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
    - **Tests:**
      - **Frozen and getters:** `log` is frozen, each level is a getter, and `Error.prepareStackTrace` is restored after each read.
      - **Bound, not wrapped:** a `console` spy's captured stack holds no knix frame (all four engines).
-     - **Scope:** a string label prints exactly as written, and a class or instance label reads the class name.
+     - **Scope:** a string label prints exactly as written.
+     - **Scope from a class or instance:** reads the class name and strips one leading `_`; from a method, `Class.method` in all four engines.
      - **Tap:** `tap` returns `value`, and the empty values print as visible text.
    - Checkpoint: `npm run test:browser` exits 0, `grep -rnw any packages/utils/src` finds no `any` type, and the commit's gates pass.
    - Commit type: `feat(utils):`

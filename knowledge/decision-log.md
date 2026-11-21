@@ -446,6 +446,7 @@ Every ruling the operator has made on knix, in the order they were made, with wh
 - **Ruled:** operator, my Question 60 A.
 - **Ruling:** the logger strips one leading `_` from a class name it reads itself, from a class, an instance or the stack, because an Angular development build names classes `_CartService`. A string passed to `log.scope('…')` prints exactly as written.
 - **Written at:** not yet.
+- **Superseded by:** Caller prefix is the same in every engine (the stack as a source only).
 
 ### 2026-11-20 — Logger test runner
 
@@ -477,3 +478,13 @@ Every ruling the operator has made on knix, in the order they were made, with wh
   - **Root scripts:** `test` runs the build and the node project; `test:browser` runs the three browser instances, in CI after `test` and at each code task's checkpoint.
   - **Checkpoints:** a plan checkpoint drops the `npm test` and `npm run typecheck` the pre-commit gates run on the same tree.
 - **Written at:** not yet.
+
+### 2026-11-21 — Caller prefix is the same in every engine
+
+- **Ruled:** operator, my Question 70 A: "Q70-A". Asked first: "The best? It should be the same across all of them, is there a reason we can't?"
+- **Supersedes:** the stack as a source in Leading underscore in logger class names.
+- **Ruling:** the automatic prefix is the method or function name read from the stack, the same string in Node, Chromium, Firefox and WebKit.
+  - **No class from the stack:** Firefox and WebKit stacks carry only the bare name (`add@…`), so reading V8's class would make the output differ by engine.
+  - **The class** comes only from `log.scope(owner)`, which prints `Class.method` in every engine.
+  - **Automatic class labels** stay with the automated scope labelling follow-up.
+- **Written at:** `knowledge/roadmap/utils-log-entry-point.prd.md`.

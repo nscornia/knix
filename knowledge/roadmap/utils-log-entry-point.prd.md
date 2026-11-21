@@ -45,8 +45,9 @@ The logger is development-only ("Logger is development-only"): it exists to debu
     - **V8:** structured call sites through `Error.prepareStackTrace`, set, captured and restored synchronously.
     - **Other engines:** a string parser for the Safari and Firefox stack formats.
   - **Walking up:** cross native frames only, and stop at the first non-native frame.
-  - **Output:** never a file and line read from the stack.
-    - Class names lose one leading `_` when the logger reads them itself.
+  - **Output** ("Caller prefix is the same in every engine"): the method or function name the stack gives, the same string in every engine.
+    - **Never** a class or a file and line read from the stack; Firefox and WebKit stacks carry no class.
+    - **A class or instance passed to `log.scope`** loses one leading `_` from its name.
   - **A short or empty stack** is tolerated, and prints no automatic prefix.
 - **Badge colour** ("Logger badge colour in Node", "When Node badges get colour", "How the logger reads FORCE_COLOR", "Logger badge palette"):
   - **Browsers:** `%c`, with one fixed CSS background and text pair per badge.
@@ -193,8 +194,10 @@ Probes and source reads from 2026-11-17 to 2026-11-19, each tagged by how it was
 - **Angular class names** (VERIFIED, probe, Angular 22.3.0 development build): classes are named `_CartService`.
   - The build emits `var CartService = class _CartService {`, with esbuild 0.28.2.
   - `@angular/build` 22.3.0 has no `keepNames` option.
-- **Engine naming** (VERIFIED, probes, Chrome and JavaScriptCore):
-  - Structured call sites give `Class.method`.
+- **Engine naming** (VERIFIED, probes, Chrome and JavaScriptCore; corrected 2026-11-21):
+  - V8 structured call sites give `Class.method`.
+  - Firefox and WebKit stack strings give the bare method name, `add@url:line:col` (VERIFIED, probe, Playwright 1.65.1, 2026-11-21).
+    - JavaScriptCore has no structured call sites; the earlier "`Class.method`" claim held for V8 only.
   - Async callbacks have no enclosing method.
   - Stack `file:line` is not source-mapped.
 - **Node console** (VERIFIED, probe, Node 26.8.1):
@@ -226,8 +229,8 @@ Probes and source reads from 2026-11-17 to 2026-11-19, each tagged by how it was
 - [ ] `log.tap(value, ...rest)` returns `value`.
   - Tests show `''`, `'null'` and `'undefined'` logged as visible text.
 - [ ] Prefix tests run in Node, Chromium, Firefox and WebKit through the Vitest projects. In each they assert:
-  - `Class.method` for a method call, and the function name for a plain function.
-  - A single leading `_` stripped, and a string `log.scope` label printed as written.
+  - The method name for a method call, and the function name for a plain function, the same string in all four.
+  - `Class.method` from a class or instance `log.scope` label with a single leading `_` stripped, and a string label printed as written.
   - No file or line ever printed.
 - [ ] Tests cover a short or empty stack, with no throw and no automatic prefix.
 - [ ] Tests show `Error.prepareStackTrace` restored after each getter access.
