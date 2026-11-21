@@ -1,12 +1,12 @@
 ---
 type: "slice"
-state: "ready-for-agent"
+state: "planned"
 priority: "candidate"
 kind: "enhancement"
 cycle: "b7f1314c-908"
 provenance: "prompted"
 created: "2026-11-19T03:14:50Z"
-modified: "2026-11-20T14:14:38Z"
+modified: "2026-11-21T18:05:27Z"
 report-worthy: true
 ---
 # Build the @knix/utils development logger
