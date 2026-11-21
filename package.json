@@ -21,7 +21,11 @@
     "changeset": "changeset",
     "check:law-links": "node scripts/check-law-links.mjs",
     "version-packages": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "test:browser": "npm run test:browser --workspaces --if-present"
   },
   "devDependencies": {
     "@changesets/cli": "3.0.3"

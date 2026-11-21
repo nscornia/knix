@@ -1859,7 +1859,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.454.0"
+      "resolvedVersion": "0.455.0"
     }
   ],
   "component": {
@@ -1876,11 +1876,12 @@
       }
     }
   },
-  "ecorn": "0.454.0",
+  "ecorn": "0.455.0",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
-    ".ai/instructions/repository-boundary.md": "3ce6677b8ee48a079811ef37805671dda19feebb8490c9bb78dee816e81ca27b"
+    ".ai/instructions/repository-boundary.md": "3ce6677b8ee48a079811ef37805671dda19feebb8490c9bb78dee816e81ca27b",
+    "ai.config.jsonc": "3996df7a6bcc134a2a148755d0ff639519aea2abbe4530d1a33be0a2a284765d"
   },
   "override": {},
   "owned": [
@@ -1888,5 +1889,23 @@
     "definition.knowledge/principle._methodology"
   ],
   "schemaVersion": 3,
-  "setting": {}
+  "setting": {
+    "definition": {
+      "hooks": {
+        "hook-gate-git-pre-commit-test": {
+          "scopes": {
+            "docs": {
+              "paths": [
+                "*.md",
+                ".ai/**/*.md",
+                "knowledge/**",
+                "draft/**"
+              ],
+              "script": "check:law-links"
+            }
+          }
+        }
+      }
+    }
+  }
 }

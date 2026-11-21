@@ -1,7 +1,6 @@
 {
   "name": "@knix/utils",
   "version": "0.0.0",
-  "private": true,
   "description": "Framework-agnostic TypeScript utilities, one tree-shakable entry point per area.",
   "keywords": [
     "typescript",
@@ -16,7 +15,37 @@
     "directory": "packages/utils"
   },
   "homepage": "https://github.com/nscornia/knix/tree/main/packages/utils#readme",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "./dist/log/global.js"
+  ],
+  "exports": {
+    "./log": {
+      "types": "./dist/log/index.d.ts",
+      "import": "./dist/log/index.js"
+    },
+    "./log/global": {
+      "types": "./dist/log/global.d.ts",
+      "import": "./dist/log/global.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && vitest run --project node",
+    "test:browser": "vitest run --project browser"
+  },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@vitest/browser-playwright": "5.1.1",
+    "playwright": "1.65.1",
+    "typescript": "6.0.3",
+    "vite": "8.3.8",
+    "vitest": "5.1.1"
   }
 }

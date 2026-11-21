@@ -1,0 +1,15 @@
+{
+  "definition": {
+    "hooks": {
+      "hook-gate-git-pre-commit-test": {
+        "scopes": {
+          // A docs-only commit needs the link check, not the package tests.
+          "docs": {
+            "paths": ["*.md", ".ai/**/*.md", "knowledge/**", "draft/**"],
+            "script": "check:law-links"
+          }
+        }
+      }
+    }
+  }
+}
