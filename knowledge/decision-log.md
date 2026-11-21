@@ -452,6 +452,7 @@ Every ruling the operator has made on knix, in the order they were made, with wh
 - **Ruled:** operator, my Question 61 A.
 - **Ruling:** Vitest 5.1.1 with two projects. A Node project covers the colour rule and Node naming. A browser project runs `@vitest/browser-playwright` 5.1.1 in Chromium, Firefox and WebKit, so each stack parser meets its own engine's real stacks. CI installs and caches the three Playwright browsers. Colour tests pass a stream in rather than reading `process.stdout`, because Vitest workers write to a pipe.
 - **Written at:** not yet.
+- **Superseded by:** Where knix's tests run (the CI cache clause only).
 
 ### 2026-11-20 — How the logger reads FORCE_COLOR
 
@@ -464,4 +465,15 @@ Every ruling the operator has made on knix, in the order they were made, with wh
 
 - **Ruled:** operator, on my Question 64's version default: "\"private\" or not doesn't matter to me, you can make it pulic and puslish it under 0.x.x".
 - **Ruling:** the logger slice removes `private: true` from `@knix/utils`, because the package then holds a real utility rather than an empty placeholder. `main` keeps `0.0.0`, and the first publish stays the `0.0.1` that First release version rules, inside the 0.x.x range the version ceiling enforces.
+- **Written at:** not yet.
+
+### 2026-11-21 — Where knix's tests run
+
+- **Ruled:** operator, my Question 67 A: "Q67-A".
+- **Supersedes:** the CI cache clause of Logger test runner ("CI installs and caches the three Playwright browsers").
+- **Ruling:** each check runs once, where it costs least, because the friction directive requires it.
+  - **CI:** runs `npx playwright install --with-deps` for the three browsers on every run, with no browser cache. Playwright's CI docs say caching browser binaries is not recommended.
+  - **Docs commits:** the pre-commit test gate gets a docs scope (`*.md`, `.ai/**/*.md`, `knowledge/**`, `draft/**`). A commit staging only those paths runs `check:law-links` and skips typecheck.
+  - **Root scripts:** `test` runs the build and the node project; `test:browser` runs the three browser instances, in CI after `test` and at each code task's checkpoint.
+  - **Checkpoints:** a plan checkpoint drops the `npm test` and `npm run typecheck` the pre-commit gates run on the same tree.
 - **Written at:** not yet.
