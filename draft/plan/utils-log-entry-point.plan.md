@@ -9,7 +9,9 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
 **Status:** Ready to execute
 **Verified:** 2026-11-21 — 12 cold checks folded (3 refuted and corrected, 2 inferred and settled by task steps); the fifth reconciliation audit returned HONORED.
 
-**Amended:** 2026-11-21 by my Question 70 A (decision log "Caller prefix is the same in every engine"): no class from the stack; the `_` strip moves to Task 2.
+**Amended:** 2026-11-21 by my Question 70 A (decision log "Caller prefix is the same in every engine"): no class from the stack. The `_` strip moves to Task 2.
+
+**Amended:** 2026-11-21 by my Question 71 A (decision log "How the caller prefix is printed"): the levels and `tap` print `[name]`; badges colour ` name `; Tasks 2 and 3 test both forms.
 
 ## Starting position
 
@@ -60,12 +62,14 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
      - **Levels:** a frozen `log` whose `log`, `warn` and `error` getters return `console.<level>.bind(console, ...prefix)`.
      - **Scope:** `log.scope(owner)` takes a string, class or instance, and returns an object with the same methods, `scope` aside.
      - **Tap:** `log.tap(value, ...rest)` returns `value`, and shows `''`, `'null'` and `'undefined'` readably.
-   - **Tests:**
+   - **Tests, shape:**
      - **Frozen and getters:** `log` is frozen, each level is a getter, and `Error.prepareStackTrace` is restored after each read.
      - **Bound, not wrapped:** a `console` spy's captured stack holds no knix frame (all four engines).
-     - **Scope:** a string label prints exactly as written.
-     - **Scope from a class or instance:** reads the class name and strips one leading `_`; from a method, `Class.method` in all four engines.
      - **Tap:** `tap` returns `value`, and the empty values print as visible text.
+   - **Tests, prefix** (all four engines):
+     - **Printed form:** the levels and `tap` lead with `[name]`, and print no prefix when there is no name.
+     - **Scope:** a string label prints exactly as written.
+     - **Scope from a class or instance:** reads the class name and strips one leading `_`; from a method, `Class.method`.
    - Checkpoint: `npm run test:browser` exits 0, `grep -rnw any packages/utils/src` finds no `any` type, and the commit's gates pass.
    - Commit type: `feat(utils):`
 
@@ -81,6 +85,7 @@ This plan builds `@knix/utils/log` and its opt-in `@knix/utils/log/global` entry
      - **Colour rule** (node project): pass a stream and an environment in, covering each `FORCE_COLOR` value, `hasColors()` true and false, and a non-terminal stream.
      - **Badges bound** (shared): each badge is a getter, and a `console` spy's captured stack holds no knix frame.
      - **Browser output** (browser project): `%c` output.
+     - **Badge text** (shared): ` name ` with no brackets, and a short blank block when there is no name.
      - **Contrast** (shared): every CSS pair reaches at least 4.5:1.
    - Checkpoint: `npm run test:browser` exits 0, and the commit's gates pass.
    - Commit type: `feat(utils):`

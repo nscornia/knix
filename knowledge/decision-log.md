@@ -488,3 +488,11 @@ Every ruling the operator has made on knix, in the order they were made, with wh
   - **The class** comes only from `log.scope(owner)`, which prints `Class.method` in every engine.
   - **Automatic class labels** stay with the automated scope labelling follow-up.
 - **Written at:** `knowledge/roadmap/utils-log-entry-point.prd.md`.
+
+### 2026-11-21 — How the caller prefix is printed
+
+- **Ruled:** operator, my Question 71 A: "Q71-A".
+- **Ruling:** the levels and `tap` print the prefix in square brackets as the leading argument: `log.log('x')` prints `[CartService.add] x`.
+  - **Badges** colour the same text with one space each side and no brackets: ` CartService.add `.
+  - **No name:** the levels and `tap` print no prefix, and a badge prints a short blank coloured block.
+- **Written at:** `knowledge/roadmap/utils-log-entry-point.prd.md`.

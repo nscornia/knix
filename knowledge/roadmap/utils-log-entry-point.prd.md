@@ -49,6 +49,9 @@ The logger is development-only ("Logger is development-only"): it exists to debu
     - **Never** a class or a file and line read from the stack; Firefox and WebKit stacks carry no class.
     - **A class or instance passed to `log.scope`** loses one leading `_` from its name.
   - **A short or empty stack** is tolerated, and prints no automatic prefix.
+  - **Printed form** ("How the caller prefix is printed"): the levels and `tap` print `[name]` as the leading argument, so `log.log('x')` prints `[CartService.add] x`.
+    - **Badges** colour ` name `, one space each side and no brackets.
+    - **No name:** the levels and `tap` print no prefix; a badge prints a short blank coloured block.
 - **Badge colour** ("Logger badge colour in Node", "When Node badges get colour", "How the logger reads FORCE_COLOR", "Logger badge palette"):
   - **Browsers:** `%c`, with one fixed CSS background and text pair per badge.
     - Each pair meets WCAG AA text contrast.
@@ -232,7 +235,9 @@ Probes and source reads from 2026-11-17 to 2026-11-19, each tagged by how it was
   - The method name for a method call, and the function name for a plain function, the same string in all four.
   - `Class.method` from a class or instance `log.scope` label with a single leading `_` stripped, and a string label printed as written.
   - No file or line ever printed.
+  - The levels and `tap` print the name as `[name]`, and a badge as ` name ` with no brackets.
 - [ ] Tests cover a short or empty stack, with no throw and no automatic prefix.
+  - A badge with no name prints a short blank coloured block.
 - [ ] Tests show `Error.prepareStackTrace` restored after each getter access.
 - [ ] Colour tests pass a stream in and cover:
   - `FORCE_COLOR` empty, `1`, `true`, `2` and `3` on; `0`, `false` and an unrecognised value off.
