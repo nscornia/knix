@@ -7,7 +7,6 @@ coverage/
 .idea/
 
 # Generated AI host output; .ai/ and AGENTS.md are the committed source.
-CLAUDE.md
 .claude/
 .opencode/
 opencode.json
