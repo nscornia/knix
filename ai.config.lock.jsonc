@@ -1859,7 +1859,7 @@
     {
       "origin": "cli",
       "package": "@ecorn/config",
-      "resolvedVersion": "0.455.2"
+      "resolvedVersion": "0.455.3"
     }
   ],
   "component": {
@@ -1876,7 +1876,7 @@
       }
     }
   },
-  "ecorn": "0.455.2",
+  "ecorn": "0.455.3",
   "hooks": [],
   "input": {
     ".ai/instructions/": "2fd6c922fdb04f78cd7c92e2df6305624a5ac7c659113de850555695d7a45e92",
